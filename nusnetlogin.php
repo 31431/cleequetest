@@ -27,22 +27,22 @@ echo "ok";
 		} elseif ($openid->validate()){
 			$data = $openid->getAttributes();
 			$email = $data['contact/email'];
-			$username = $data['namePerson/friendly'];
+			$usernameInput = $data['namePerson/friendly'];
 			$fullName = $data['namePerson'];
 			print_r($data);
 			echo "<br>Identity: $openid->identity <br>";
 			session_start();
-			$_SESSION['username'] = $username;
+			$_SESSION['username'] = $usernameInput;
 			$_SESSION['fullName'] = $fullName;
 			$_SESSION['email']=$email;
 
 			/*if(checkingUsernameExistInUserid($username)){
-			$sql = "INSERT INTO userid(username, password, email, name)VALUES ('$username', 'NUSNET','$email', '$fullName')";
+			$sql = "INSERT INTO userid(username, password, email, name)VALUES ('$usernameInput', 'NUSNET','$email', '$fullName')";
     		$database->exec($sql);
     		echo "Yeah";}*/
 
     		echo "Boo";
-			header('Location:https://cleequetest.herokuapp.com/dashboard.php');
+			header('Location:https://cleequetest.herokuapp.com/loginPage.php');
 		} else {
 			echo "The user hasn't logged in.";
 		}
