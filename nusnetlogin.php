@@ -6,7 +6,8 @@
 
 
 function checkingUsernameExistInUserid($usernameInput){
-	include("databaseconnection.php");
+	return 1;
+	/*include("databaseconnection.php");
 	$sql= "SELECT count(id) FROM userid WHERE username='$usernameInput'";
 	$stmt = $database -> prepare($sql);
 	$stmt->execute();
@@ -16,7 +17,7 @@ function checkingUsernameExistInUserid($usernameInput){
 		return 1;//exit();
 	} else {
 		return 0;
-	}
+	}*/
 }
 
 
@@ -35,10 +36,12 @@ function checkingUsernameExistInUserid($usernameInput){
 			$_SESSION['fullName'] = $fullName;
 			$_SESSION['email']=$email;
 
-			/*if(checkingUsernameExistInUserid($username)){
-			$sql = "INSERT INTO userid(username, password, email, name)VALUES ('$usernameInput', 'NUSNET','$email', '$fullName')";
+			if(checkingUsernameExistInUserid($username)){
+			echo "<script> alert('In!')</script>";
+			/*$sql = "INSERT INTO userid(username, password, email, name)VALUES ('$usernameInput', 'NUSNET','$email', '$fullName')";
     		$database->exec($sql);
-    		echo "Yeah";}*/
+    		echo "Yeah"
+    		*/;}
 
     		echo "Boo";
 			header('Location:https://cleequetest.herokuapp.com/loginPage.php');
