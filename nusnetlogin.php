@@ -15,7 +15,7 @@ function checkingUsernameExistInUserid($usernameInput){
 		return 1;//exit();
 	} else {
 		return 0;
-	}*/
+	}
 }
 
 
