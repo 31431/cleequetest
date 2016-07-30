@@ -34,7 +34,7 @@ function checkingUsernameExistInUserid($usernameInput){
 			$_SESSION['fullName'] = $fullName;
 			$_SESSION['email']=$email;
 
-			if(checkingUsernameExistInUserid($username)){
+			if(checkingUsernameExistInUserid($usernameInput)){
 			$sql = "INSERT INTO userid(username, password, email, name)VALUES ('$usernameInput', 'NUSNET','$email', '$fullName')";
     		$database->exec($sql);
     		echo "Yeah"
