@@ -4,7 +4,7 @@
 	include("databaseconnection.php");
 	$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
 
-/*
+
 function checkingUsernameExistInUserid($usernameInput){
 	include("databaseconnection.php");
 	$sql= "SELECT count(id) FROM userid WHERE username='$usernameInput'";
@@ -18,8 +18,7 @@ function checkingUsernameExistInUserid($usernameInput){
 		return 0;
 	}
 }
-*/
-echo "ok";
+
 
 	if($openid->mode){
 		if($openid->mode == 'cancel'){
