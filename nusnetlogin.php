@@ -2,8 +2,7 @@
 	include('LightOpenID-master/openid.php');
 	include('databaseconnection.php');
 	include('groupFunction.php');
-	echo "ok";
-	/*$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
+	$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
 
 function checkingUsernameExistInUserid($usernameInput){
 	include("databaseconnection.php");
@@ -18,6 +17,9 @@ function checkingUsernameExistInUserid($usernameInput){
 	return 0;
 	}
 }
+
+echo "ok";
+/*
 	if(isset($openid->mode)){
 		if($openid->mode == 'cancel'){
 			echo "User has canceled authentication";
