@@ -1,8 +1,8 @@
 <?php
-	require_once 'LightOpenID-master/openid.php';
-	require 'databaseconnection.php';
-	require 'groupFunction.php';
-	$openid= new LightOpenID("https://cleeque.herokuapp.com/nusnet.php");
+	include('LightOpenID-master/openid.php');
+	include('databaseconnection.php');
+	include('groupFunction.php');
+	$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
 
 function checkingUsernameExistInUserid($usernameInput){
 	include("databaseconnection.php");
@@ -38,7 +38,7 @@ function checkingUsernameExistInUserid($usernameInput){
     		echo "Yeah";}
 
     		echo "Boo";
-			header('Location:https://cleeque.herokuapp.com/dashboard.php');
+			header('Location:https://cleequetest.herokuapp.com/dashboard.php');
 		} else {
 			echo "The user hasn't logged in.";
 		}
