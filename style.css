@@ -844,3 +844,8 @@ tr{
 	display: block;
 	clear: both;
 	padding-top: 50px;
+}
+
+.noPointer{
+	cursor: default;
+}

@@ -1,7 +1,7 @@
 <?php
 	include('LightOpenID-master/openid.php');
 	include("databaseconnection.php");
-	$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
+	$openid= new LightOpenID("https://cleeque.herokuapp.com/nusnet.php");
 
 
 function checkingUsernameExistInUserid($usernameInput){
@@ -22,7 +22,7 @@ function checkingUsernameExistInUserid($usernameInput){
 	if($openid->mode){
 		if($openid->mode == 'cancel'){
 			echo "<script> alert('User has canceled authentication');</script>";
-			header('Location:https://cleequetest.herokuapp.com/');
+			header('Location:https://cleeque.herokuapp.com/');
 		} elseif ($openid->validate()){
 			$data = $openid->getAttributes();
 			$email = $data['contact/email'];
@@ -42,7 +42,7 @@ function checkingUsernameExistInUserid($usernameInput){
     		;}
 
     		echo "Boo";
-			header('Location:https://cleequetest.herokuapp.com/loginPage.php');
+			header('Location:https://cleeque.herokuapp.com/loginPage.php');
 		} else {
 			echo "The user hasn't logged in.";
 		}

@@ -53,14 +53,14 @@ try {
     }
     //NUSNET connection API
     require_once 'LightOpenID-master/openid.php';
-	$openid= new LightOpenID("https://cleequetest.herokuapp.com/index.php");
+	$openid= new LightOpenID("https://cleeque.herokuapp.com/index.php");
 
 	$openid->identity = 'https://openid.nus.edu.sg/';
 	$openid->required = array(
 		'contact/email',
 		'namePerson/friendly',
 		'namePerson');
-	$openid->returnUrl = 'https://cleequetest.herokuapp.com/nusnetlogin.php';
+	$openid->returnUrl = 'https://cleeque.herokuapp.com/nusnetlogin.php';
 
     if(isset($_POST['submit'])){
     	$errMessage='';
