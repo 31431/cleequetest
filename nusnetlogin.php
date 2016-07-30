@@ -27,8 +27,8 @@ function checkingUsernameExistInUserid($usernameInput){
 			$email = $data['contact/email'];
 			$usernameInput = $data['namePerson/friendly'];
 			$fullName = $data['namePerson'];
-			print_r($data);
-			echo "<br>Identity: $openid->identity <br>";
+			//print_r($data);
+			//echo "<br>Identity: $openid->identity <br>";
 			session_start();
 			$_SESSION['username'] = $usernameInput;
 			$_SESSION['fullName'] = $fullName;
