@@ -5,7 +5,7 @@
 	$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
 
 function checkingUsernameExistInUserid($usernameInput){
-	
+	include("databaseconnection.php");
 	$sql= "SELECT count(id) FROM userid WHERE username='$usernameInput'";
 	$stmt = $database -> prepare($sql);
 	$stmt->execute();
