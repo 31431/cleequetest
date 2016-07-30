@@ -4,6 +4,7 @@
 	include("databaseconnection.php");
 	$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
 
+/*
 function checkingUsernameExistInUserid($usernameInput){
 	include("databaseconnection.php");
 	$sql= "SELECT count(id) FROM userid WHERE username='$usernameInput'";
@@ -14,12 +15,12 @@ function checkingUsernameExistInUserid($usernameInput){
 		echo "No username found<br>";
 		return 1;//exit();
 	} else {
-	return 0;
+		return 0;
 	}
 }
-
+*/
 echo "ok";
-/*
+
 	if(isset($openid->mode)){
 		if($openid->mode == 'cancel'){
 			echo "User has canceled authentication";
@@ -35,10 +36,10 @@ echo "ok";
 			$_SESSION['fullName'] = $fullName;
 			$_SESSION['email']=$email;
 
-			if(checkingUsernameExistInUserid($username)){
+			/*if(checkingUsernameExistInUserid($username)){
 			$sql = "INSERT INTO userid(username, password, email, name)VALUES ('$username', 'NUSNET','$email', '$fullName')";
     		$database->exec($sql);
-    		echo "Yeah";}
+    		echo "Yeah";}*/
 
     		echo "Boo";
 			header('Location:https://cleequetest.herokuapp.com/dashboard.php');
