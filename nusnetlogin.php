@@ -1,6 +1,5 @@
 <?php
 	include('LightOpenID-master/openid.php');
-	include('groupFunction.php');
 	include("databaseconnection.php");
 	$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
 
