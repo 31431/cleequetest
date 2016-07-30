@@ -21,7 +21,7 @@ function checkingUsernameExistInUserid($usernameInput){
 */
 echo "ok";
 
-	if(isset($openid->mode)){
+	if($openid->mode){
 		if($openid->mode == 'cancel'){
 			echo "User has canceled authentication";
 		} elseif ($openid->validate()){
@@ -49,6 +49,6 @@ echo "ok";
 	} else {
 		echo "Please login";
 	}
-*/
+
 ?>
 
