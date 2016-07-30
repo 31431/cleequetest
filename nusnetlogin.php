@@ -21,7 +21,8 @@ function checkingUsernameExistInUserid($usernameInput){
 
 	if($openid->mode){
 		if($openid->mode == 'cancel'){
-			echo "User has canceled authentication";
+			echo "<script> alert('User has canceled authentication');</script>";
+			header('Location:https://cleequetest.herokuapp.com/');
 		} elseif ($openid->validate()){
 			$data = $openid->getAttributes();
 			$email = $data['contact/email'];
