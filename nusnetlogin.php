@@ -2,7 +2,8 @@
 	include('LightOpenID-master/openid.php');
 	include('databaseconnection.php');
 	include('groupFunction.php');
-	$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
+	echo "ok";
+	/*$openid= new LightOpenID("https://cleequetest.herokuapp.com/nusnet.php");
 
 function checkingUsernameExistInUserid($usernameInput){
 	include("databaseconnection.php");
@@ -45,17 +46,6 @@ function checkingUsernameExistInUserid($usernameInput){
 	} else {
 		echo "Please login";
 	}
-
+*/
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>NUSNET login</title>
-</head>
-<body>
-
-
-
-</body>
-</html>
