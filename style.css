@@ -511,6 +511,7 @@ tr{
 }
 
 
+
 @media screen and (max-width: 680px){
 	.menu p:nth-child(-n+3){
 		display: none;
@@ -537,8 +538,13 @@ tr{
 		width: 120px;
 	}
 
+	.mainMenu p a{
+		color: inherit;
+	}
+
 	.mainMenu p{
 		margin: 0;
+		color: white;
 	}
 
 	.mainMenu p:hover{
@@ -557,6 +563,7 @@ tr{
 	}
 
 }
+
 
 .mainHeader{
 	width: 100%;
