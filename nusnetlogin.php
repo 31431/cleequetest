@@ -10,14 +10,14 @@ function checkingUsernameExistInUserid($usernameInput){
 	$stmt = $database -> prepare($sql);
 	$stmt->execute();
 	$count = $stmt->fetchColumn();
-	if(count($count)!= 1){
+	if($count!= 1){
 		echo "No username found<br>";
 		return 1;//exit();
 	} else {
 	return 0;
 	}
 }
-	if($openid->mode){
+	if(isset($openid->mode)){
 		if($openid->mode == 'cancel'){
 			echo "User has canceled authentication";
 		} elseif ($openid->validate()){
