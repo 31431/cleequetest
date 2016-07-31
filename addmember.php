@@ -116,6 +116,13 @@ if (!isset($_POST['username'])) {
     color: white;
     transition: 0.2s;
 	}
+
+	.groupTableHeader{
+		font-family: "Montserrat";
+		font-size: 20px;
+		text-align: center;
+		clear: both;
+	}
 </style>
 
 <div class="navbar">
@@ -140,6 +147,7 @@ if (!isset($_POST['username'])) {
 			</form>
 		</div>
 		<div class="showTableDiv">
+			<p class="groupTableHeader">The Group's Timetable</p>
 <?php
 //Initialise the free time array
 $groupMemberArray=gettingGroupMember($_SESSION['groupID']);
