@@ -190,7 +190,6 @@ $(document).ready(function(){
 	$('.memberRadio').click(function(){
 		$(this).toggleClass('selected');
 	});
-});
 
 
 });
