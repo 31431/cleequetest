@@ -187,7 +187,7 @@ $(document).ready(function(){
 		window.location="index.php";
 	})
 
-	$('.memberRadio').click(function(){
+	$('.groupPeopleDep').click(function(){
 		$(this).toggleClass('selected');
 	});
 
