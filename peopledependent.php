@@ -143,6 +143,20 @@ input.return[type=submit]:hover {
 .selected{
 	background-color: #2b3856;
 	color: white;
+	font-size: 20px;
+	margin: 0px;
+	margin-bottom: 10px;
+	padding: 5px;
+	display: inline-block;
+	width: 31%;
+	max-width: 250px;
+	text-align: center;
+	border-radius: 7px;
+	border: 1px solid white;
+	cursor: pointer;
+	transition: 0.2s;
+	overflow: hidden;
+
 }
 
 </style>
