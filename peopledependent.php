@@ -121,6 +121,18 @@ input.return[type=submit]:hover {
 	font-size: 20px;
 	margin: 0px;
 	margin-bottom: 10px;
+	background-color: white;
+	padding: 5px;
+	color: #3498db;
+	display: inline-block;
+	width: 31%;
+	max-width: 250px;
+	text-align: center;
+	border-radius: 7px;
+	border: 1px solid;
+	cursor: pointer;
+	transition: 0.2s;
+	overflow: hidden;
 
 }
 
@@ -143,7 +155,7 @@ input.return[type=submit]:hover {
 		foreach ($value as $subkey => $userID) {
 			$name= gettingUsernameFromID($userID);
 			echo "<input type='checkbox' class='member' name='userChosen[$name]' value='$userID' id='$name' ></input>";
-			echo "<label for='$name' class='groupName groupPeopleDep'>$name</label>";
+			echo "<label for='$name' class='groupPeopleDep'>$name</label>";
 		}
 	}
 	//echo "<br><br><input type='submit' value='Submit'>";
