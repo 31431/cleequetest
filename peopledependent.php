@@ -116,6 +116,23 @@ input.return[type=submit]:hover {
     color: white;
     margin-left: 20px;
 }
+
+.groupPeopleDep{
+	font-size: 20px;
+	margin: 0px;
+	margin-bottom: 10px;
+
+}
+
+.groupPeopleDep:hover{
+	background-color: #8ac3f1;
+}
+
+.selected{
+	background-color: #ffc107;
+	color: black;
+}
+
 </style>
 
 <br><br><p id="selectmember">Select the members:
@@ -125,7 +142,8 @@ input.return[type=submit]:hover {
 	foreach($groupMember as $key=>$value){
 		foreach ($value as $subkey => $userID) {
 			$name= gettingUsernameFromID($userID);
-			echo "<input type='checkbox' class='member' name='userChosen[$name]' value='$userID' id='check'>$name</input><br>";
+			echo "<input type='checkbox' class='member' name='userChosen[$name]' value='$userID' id='$name' style='display:none;'></input>";
+			echo "<label for='$name' class='groupName groupPeopleDep'>$name</label>";
 		}
 	}
 	//echo "<br><br><input type='submit' value='Submit'>";

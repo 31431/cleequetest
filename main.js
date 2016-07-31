@@ -187,5 +187,10 @@ $(document).ready(function(){
 		window.location="index.php";
 	})
 
+	$('.memberRadio').click(function(){
+		$(this).toggleClass('selected');
+	});
+});
+
 
 });
