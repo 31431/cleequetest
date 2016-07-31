@@ -141,8 +141,8 @@ input.return[type=submit]:hover {
 }
 
 .selected{
-	background-color: #ffc107;
-	color: black;
+	background-color: #2b3856;
+	color: white;
 }
 
 </style>
