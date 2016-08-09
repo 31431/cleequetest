@@ -851,12 +851,15 @@ tr{
 }
 
 .usernameDescription{
-		font-size: 20px;
+	font-size: 20px;
+	margin-bottom: 0;
 }
 
 .nameDescription{
-	color: #e6e6e6;
+	color: #999999;
 	font-family: "Roboto";
 	font-style: italic;
 	font-size: 15px;
+	margin-bottom: 0;
+	overflow: hidden;
 }
