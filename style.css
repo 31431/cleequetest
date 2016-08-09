@@ -849,3 +849,14 @@ tr{
 .noPointer{
 	cursor: default;
 }
+
+.usernameDescription{
+		font-size: 20px;
+}
+
+.nameDescription{
+	color: #e6e6e6;
+	font-family: "Roboto";
+	font-style: italic;
+	font-size: 15px;
+}
