@@ -143,7 +143,6 @@ input.return[type=submit]:hover {
 .selected{
 	background-color: #2b3856;
 	color: white;
-	
 }
 
 </style>

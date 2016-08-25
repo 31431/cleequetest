@@ -125,6 +125,42 @@ if (!isset($_POST['username'])) {
 		text-align: center;
 		clear: both;
 	}
+
+
+	.memberList{
+		background-color: white;
+		padding: 5px;
+		color: #3498db;
+		display: inline-block;
+		width: 31%;
+		max-width: 250px;
+		text-align: center;
+		border-radius: 7px;
+		border: 1px solid;
+		transition: 0.2s;
+		overflow: hidden;
+	}
+
+		
+	.usernameDescription{
+		font-size: 20px;
+		margin: 0;
+	}
+
+	.nameDescription{
+		color: #999999;
+		font-family: "Roboto";
+		font-style: italic;
+		font-size: 15px;
+		margin: 0;
+		overflow: hidden;
+	}
+
+	#memberHeaders{
+		margin: 0;
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
 </style>
 
 <div class="navbar">
@@ -145,7 +181,7 @@ if (!isset($_POST['username'])) {
 			<h6 id="welcomeHeaderFullName">Group ID : <?php echo $_SESSION['groupID'];?></h6>
 			<form action="exitGroup.php" method='POST'>
 				<p id="addmember"  style="text-align: center;">
-				<input  style="margin-left: auto; margin-right: auto;" class="quitgroup" type='submit' name='submit' value='Quit Group'><br>
+				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Quit Group'><br>
 			</form>
 		</div>
 		<div class="showTableDiv">
