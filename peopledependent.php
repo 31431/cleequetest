@@ -185,7 +185,8 @@ input.return[type=submit]:hover {
 	}
 	echo "<p id='selectmember'> Common Free Time For Selected Users</p>";
 	echo '<div class="showTableDiv">';
-	printTableArray($freeTimeArray);
+	$numberOfPeopleSubmitted = count($_POST['userChosen']);
+	printTableArray($freeTimeArray, $numberOfPeopleSubmitted);
 	echo '</div>';
 	
 
