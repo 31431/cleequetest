@@ -129,7 +129,7 @@ function printTableArray($array,$numberOfPeople){
          if($subvalue==0){
             echo "<td class='free'></td>";
          } else {
-            $opacity = (($subvalue/$numberOfPeople*0.8) + 0.2); // 5 represents the number of group memebers;
+            $opacity = ((($subvalue/$numberOfPeople) *0.8) + 0.2); // 5 represents the number of group memebers;
             echo "<td class='busy' style='opacity: $opacity'></td>";
          }
 
