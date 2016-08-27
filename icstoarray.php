@@ -129,7 +129,8 @@ function printTableArray($array){
          if($subvalue==0){
             echo "<td class='free'></td>";
          } else {
-            echo "<td class='busy'>X</td>";
+            $opacity = $subvalue/20; // 5 represents the number of group memebers;
+            echo "<td class='busy' style='opacity: $opacity'>X</td>";
          }
 
       }
