@@ -154,8 +154,9 @@ input.return[type=submit]:hover {
 	foreach($groupMember as $key=>$value){
 		foreach ($value as $subkey => $userID) {
 			$name= gettingUsernameFromID($userID);
+			$fullname = gettingNameFromUsername($usernameFromID);
 			echo "<input type='checkbox' class='member' name='userChosen[$name]' value='$userID' id='$name' style='display:none'></input>";
-			echo "<label for='$name' class='groupPeopleDep'>$name</label>";
+			echo "<label for='$name' class='usernameDescription'>$name<br><span style='nameDescription'>$fullname</span></label>";
 		}
 	}
 	//echo "<br><br><input type='submit' value='Submit'>";
