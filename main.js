@@ -188,8 +188,9 @@ $(document).ready(function(){
 	});
 
 	$('.groupPeopleDep').click(function(){
+		$nameDes= $(this).getElementByTagName("span");
 		$(this).toggleClass('selected');
-		$('this span').toggleClass('selectedForName');
+		$nameDes.toggleClass('selectedForName');
 	});
 
 
