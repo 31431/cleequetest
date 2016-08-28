@@ -133,6 +133,7 @@ input.return[type=submit]:hover {
 	cursor: pointer;
 	transition: 0.2s;
 	overflow: hidden;
+	font-family: "Montserrat";
 
 }
 
@@ -143,6 +144,10 @@ input.return[type=submit]:hover {
 .selected{
 	background-color: #2b3856;
 	color: white;
+}
+
+.selectedForName{
+	color: #3498db ;
 }
 
 </style>
@@ -156,7 +161,7 @@ input.return[type=submit]:hover {
 			$name= gettingUsernameFromID($userID);
 			$fullname = gettingNameFromUsername($name);
 			echo "<input type='checkbox' class='member' name='userChosen[$name]' value='$userID' id='$name' style='display:none'></input>";
-			echo "<label for='$name' class='groupPeopleDep'>$name<br><span style='nameDescription'>$fullname</span></label>";
+			echo "<label for='$name' class='groupPeopleDep'>$name<br><span class='nameDescription' style='color:#999999'>$fullname</span></label>";
 		}
 	}
 	//echo "<br><br><input type='submit' value='Submit'>";
