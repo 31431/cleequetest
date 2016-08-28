@@ -189,7 +189,7 @@ $(document).ready(function(){
 
 	$('.groupPeopleDep').click(function(){
 		$(this).toggleClass('selected');
-		$(this 'span').toggleClass('selectedForName');
+		$('this span').toggleClass('selectedForName');
 	});
 
 
