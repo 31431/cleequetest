@@ -121,7 +121,7 @@ if (!isset($_POST['username'])) {
 
 	.groupTableHeader{
 		font-family: "Montserrat";
-		font-size: 20px;
+		font-size: 25px;
 		text-align: center;
 		clear: both;
 	}
