@@ -186,6 +186,7 @@ if (!isset($_POST['username'])) {
 		</div>
 		<div class="showTableDiv">
 			<p class="groupTableHeader">The Group's Timetable</p>
+			<p>Darker slots mean more people are not available</p>
 <?php
 //Initialise the free time array
 $groupMemberArray=gettingGroupMember($_SESSION['groupID']);
