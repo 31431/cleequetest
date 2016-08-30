@@ -638,7 +638,7 @@ tr{
 }
 
 #uploadFileHeader{
-	font-size: 20px;
+	font-size: 25px;
 	color: white;
 	font-family: "Montserrat";
 	text-align: center;
@@ -684,7 +684,7 @@ tr{
 .timetable p{
 	text-align: center;
 	font-family: "Montserrat";
-	font-size: 20px;
+	font-size: 25px;
 	display: block;
 	clear: both;
 
@@ -880,7 +880,7 @@ tr{
 #fileDownloadHelp{
 	margin: 0;
 	color: white;
-	font-size:20px;
+	font-size:25px;
 	font-family: "Montserrat";
 	padding-top: 40px;
 	padding-bottom: 10px; 
