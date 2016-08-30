@@ -93,7 +93,7 @@ input.newgroupsubmit[type=submit]:hover {
 			<h6 id="welcomeHeaderFullName"><?php echo $_SESSION['fullName'];?></h6>
 		</div>
 		<div class="uploadFile">
-			<p id="fileDownloadHelp">Get your iCalendar file from <a href="https://nusmods.com" style="text-decoration: none">NUSMods</a></p> 
+			<p id="fileDownloadHelp">Get your iCalendar file from <a href="https://nusmods.com" target="_blank" style="text-decoration: none">NUSMods</a></p> 
 			<p style="color: white;font-family: 'Montserrat'; margin-top:0;font-size:17px;display: block; text-align: center; margin-bottom: 33px">Just refer to the picture below for help!</p>
 			<img src="http://i.imgur.com/rYzz7eb.jpg"></img>
 			<p id="uploadFileHeader">Then, upload your iCalendar file (.ics) below!</p>
