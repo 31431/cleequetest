@@ -93,9 +93,10 @@ input.newgroupsubmit[type=submit]:hover {
 			<h6 id="welcomeHeaderFullName"><?php echo $_SESSION['fullName'];?></h6>
 		</div>
 		<div class="uploadFile">
-			<p>Get your iCalendar file from <a href="nusmods.com" style="text-decoration: none">NUSMods</a>. Just refer to the picture below for help!</p>
+			<p id="fileDownloadHelp">Get your iCalendar file from <a href="https://nusmods.com" style="text-decoration: none">NUSMods</a></p> 
+			<p style="margin-top:0;font-size:15px;font-style: italic;">Just refer to the picture below for help!</p>
 			<img src="http://i.imgur.com/rYzz7eb.jpg"></img>
-			<p id="uploadFileHeader">Upload your timetable in iCalendar file or '.ics' below!</p>
+			<p id="uploadFileHeader">Then, upload your iCalendar file (.ics) below!</p>
 			<form id="uploadForm" method="post" action="upload2.php" enctype="multipart/form-data">
 					<input type="file" class="uploadBox" id="uploadBox" name="fileToUpload" style="display:none" />
 					<label for='uploadBox' id="chooseFileButton"><strong>Choose a file to upload</strong></label>
