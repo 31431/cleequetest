@@ -202,14 +202,17 @@ foreach ($groupMemberArray as $key => $value) {
 	}
 }
 $numberOfPeople = count($groupMemberArray);
-echo "<table id='opacityTable'>";
-echo "<td style='background-color: white'></td>";
+$cellWidth= 300/$numberOfPeople;
+echo "<div class='opacityTableDiv'>";
+echo "<table class='opacityTable'>";
+echo "<td style='background-color: white; width: $cellWidth;' ></td>";
 for ($i=1; $i < $numberOfPeople ; $i++) { 
 	$opacity = (($i/$numberOfPeople)*0.8) + 0.2;
-    echo "<td class='busy' style='opacity: $opacity'></td>";
+    echo "<td class='busy' style='opacity: $opacity; width: $cellWidth; '></td>";
 }
-echo "<td></td>";
+echo "<td style='width: $cellWidth;'></td>";
 echo "</table>";
+echo "</div>";
 ?>
 
 <?php
