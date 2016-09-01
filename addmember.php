@@ -212,7 +212,7 @@ for ($i=1; $i < $numberOfPeople ; $i++) {
 	$opacity = (($i/$numberOfPeople)*0.8) + 0.2;
     echo "<td class='busy' style='opacity: $opacity; width: $cellWidth; '></td>";
 }
-echo "<td style='width: $cellWidth;'></td>";
+echo "<td class='busy' style='width: $cellWidth;'></td>";
 echo "</tr>";
 echo "</table>";
 echo "</div>";
