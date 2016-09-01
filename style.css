@@ -900,6 +900,15 @@ tr{
 	margin-right: auto;
 	border-radius: 8px;
 	border: 1px;
+}
 
+.opacityTableDiv{
+	display: block;
+	text-align: center;
+}
 
+.opacityTable{
+	display: inline-block;
+	text-align: center;
+	
 }

@@ -202,7 +202,8 @@ foreach ($groupMemberArray as $key => $value) {
 	}
 }
 $numberOfPeople = count($groupMemberArray);
-$cellWidth= 300/$numberOfPeople;
+$width= 300/$numberOfPeople;
+$cellWidth = $width.'px';
 echo "<div class='opacityTableDiv'>";
 echo "<table class='opacityTable'>";
 echo "<td style='background-color: white; width: $cellWidth;' ></td>";
