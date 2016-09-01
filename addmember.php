@@ -205,8 +205,8 @@ $numberOfPeople = count($groupMemberArray);
 echo "<table id='opacityTable'>";
 echo "<td style='background-color: white'></td>";
 for ($i=1; $i < $numberOfPeople ; $i++) { 
-	$opactiy = (($i/$numberOfPeople)*0.8) + 0.2;
-	echo "<td style='opacity: $opacity'></td>";
+	$opacity = (($i/$numberOfPeople)*0.8) + 0.2;
+    echo "<td class='busy' style='opacity: $opacity'></td>";
 }
 echo "<td></td>";
 echo "</table>";
