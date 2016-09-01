@@ -905,10 +905,14 @@ tr{
 .opacityTableDiv{
 	display: block;
 	text-align: center;
+	padding-bottom: 10px;
 }
 
 .opacityTable{
 	display: inline-block;
 	text-align: center;
-	
+}
+
+.opacityTable tr{
+	height: 20px;
 }

@@ -186,7 +186,7 @@ if (!isset($_POST['username'])) {
 		</div>
 		<div class="showTableDiv">
 			<p style="margin-bottom: 0;" class="groupTableHeader">The Group's Timetable</p>
-			<p style="text-align: center; margin-top: 0; font-family: 'Montserrat'; font-size:13px"">Darker slots mean more people are not available</p>
+			<p style="text-align: center; margin-top: 0; font-family: 'Montserrat'; font-size:13px; margin-bottom: 5px;"">Darker slots mean more people are not available</p>
 <?php
 //Initialise the free time array
 $groupMemberArray=gettingGroupMember($_SESSION['groupID']);
@@ -202,16 +202,18 @@ foreach ($groupMemberArray as $key => $value) {
 	}
 }
 $numberOfPeople = count($groupMemberArray);
-$width= 300/$numberOfPeople;
+$width= 300/($numberOfPeople+1);
 $cellWidth = $width.'px';
 echo "<div class='opacityTableDiv'>";
 echo "<table class='opacityTable'>";
+echo "<tr>";
 echo "<td style='background-color: white; width: $cellWidth;' ></td>";
 for ($i=1; $i < $numberOfPeople ; $i++) { 
 	$opacity = (($i/$numberOfPeople)*0.8) + 0.2;
     echo "<td class='busy' style='opacity: $opacity; width: $cellWidth; '></td>";
 }
 echo "<td style='width: $cellWidth;'></td>";
+echo "</tr>";
 echo "</table>";
 echo "</div>";
 ?>
