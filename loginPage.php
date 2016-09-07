@@ -97,7 +97,7 @@ input.newgroupsubmit[type=submit]:hover {
 			<p style="color: white;font-family: 'Montserrat'; margin-top:0;font-size:17px;display: block; text-align: center; margin-bottom: 33px">Just refer to the picture below for help!</p>
 			<img src="http://i.imgur.com/rYzz7eb.jpg"></img>
 			<p id="uploadFileHeader">Then, upload your iCalendar file (.ics) below!</p>
-			<form id="uploadForm" method="GET" action="upload2.php" enctype="multipart/form-data">
+			<form id="uploadForm" method="POST" action="upload2.php" enctype="multipart/form-data">
 					<input type="file" class="uploadBox" id="uploadBox" name="fileToUpload" style="display:none" />
 					<label for='uploadBox' id="chooseFileButton"><strong>Choose a file to upload</strong></label>
 					<button id="uploadButton" type="submit" style="display:none">Upload</button>

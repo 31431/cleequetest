@@ -148,7 +148,7 @@ function listingAllGroups($usernameSession){
 	if(empty($groupArray)){
 		echo "<p> You have no groups! Please create one!</p>";
 	} else {
-	echo "<form action='addmember.php' method='post' id='choosingMember'>";
+	echo "<form action='addmember.php' method='GET' id='choosingMember'>";
 	foreach($groupArray as $key=>$value){
 		foreach ($value as $subkey => $subvalue) {
 			$groupName=gettingGroupNameFromID($subvalue);
