@@ -3,8 +3,8 @@ session_start();
 if(!isset($_SESSION['username'])){header('Location: index.php');}
 include("groupFunction.php");
 include("main_ics_processer.php");
-if(isset($_POST['submit']) && !isset($_SESSION['groupID'])){
-$_SESSION['groupID']=$_POST['groupNameSelected'];
+if(isset($_GET['submit']) && !isset($_GET['groupID'])){
+$_SESSION['groupID']=$_GET['groupNameSelected'];
 } else {
 	if(!isset($_SESSION['groupID'])&& !isset($_POST['submit'])){
 		header("Location: loginPage.php");

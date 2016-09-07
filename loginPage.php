@@ -129,7 +129,7 @@ input.newgroupsubmit[type=submit]:hover {
 			<?php
 				listingAllGroups($_SESSION['username']);
 			?>
-			<form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
+			<form action="<?php $_SERVER['PHP_SELF'];?>" method="GET">
 				<p id="newGroupInput"> New Group Name: </p><input class="newgroup" type="text" name="groupName" placeholder="Group Name" />
 				<input class= "newgroupsubmit" type="submit" name="submit" value="Create a new group">
 			</form>
