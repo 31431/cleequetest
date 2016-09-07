@@ -11,6 +11,8 @@ $_SESSION['groupID']=$_GET['groupNameSelected'];
 	}
 }
 
+
+//This is for adding member.
 if (!isset($_POST['username'])) {
 	//$error=true;
 	} else{
