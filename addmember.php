@@ -69,7 +69,7 @@ if (!isset($_POST['username'])) {
 			success: function(response){
 				var obj = JSON.parse(response);
 				console.log(obj);
-				$('.memberList').css('background-color','white');
+				$('.memberList').css('background-color','#e3f1e2');
 				$('.memberList').css('color','#63b252');
 				obj.forEach(function(item){
 					id = "#".concat(item);
@@ -85,7 +85,7 @@ if (!isset($_POST['username'])) {
 			});
 		});
 		$('.busy').mouseleave(function(){
-			$('.memberList').css('background-color','inherit');
+			$('.memberList').css('background-color','white');
 			$('.memberList').css('color','#3498db');
 		});
 	});		
