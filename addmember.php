@@ -69,6 +69,10 @@ if (!isset($_POST['username'])) {
 			success: function(response){
 				var obj = JSON.parse(response);
 				console.log(obj);
+				<?php foreach ($obj as $key => $value): ?>
+					id = "#".concat($value);
+					$('#'.concat($value)).css("background-color","green");
+				<?php endforeach ?>
 			},
 			error: function(response, status,thrown){
 				$("#errorMessage").text("Error! Please try again later. If the problem persists, please contact us!");
