@@ -295,7 +295,7 @@ echo "</div>";
 	</div>
 	<div style="overflow-x:scroll;">
 <?php
-if($notGroupMember){
+if($groupMember){
 	initialiseWeekArray($freeTimeArray); 
 }
 printTableArray($freeTimeArray,$numberOfPeople);
@@ -317,7 +317,7 @@ printTableArray($freeTimeArray,$numberOfPeople);
 	</div>
 
 <!-- If the user isn't a member, the seciton below wouldn't appear-->
-<?php if($GroupMember){?>
+<?php if($groupMember){?>
 <form action= '<?php $_SERVER['PHP_SELF']?>' method='POST'>
 	<p id="addmember"  style="text-align: center;">Add Group Member: </p><input class="addmember"  style="margin: auto;" type ='text' name='username' placeholder='Username or NUSNET ID'> <br>
 	<input  style="margin: auto;" class="submit" type='submit' name='submit' value='Add Member'><br>
