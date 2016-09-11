@@ -5,8 +5,8 @@
 	include("groupFunction.php");
 	include("main_ics_processer.php");
 
-	echo $username;
-	echo gettingUserID($username);
+	echo 'username: '.$username;
+	echo 'userID: '.gettingUserID($username);
 
 	//requestToJoinGroup($groupID,$username);
 
