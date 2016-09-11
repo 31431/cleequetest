@@ -9,7 +9,7 @@
 	$groupMemberArray = gettingGroupMember($_SESSION['groupID']);
 
 	//Busy people IDs => Will be parsed back.
-	$busyPeople = "";
+	$busyPeopleString = "";
 
 	//Looping through everybody in the group 
 	foreach ($groupMemberArray as $key => $value) {
@@ -17,12 +17,14 @@
 			$filename=gettingFilename($subvalue); // Getting their serialised ics array
 			$userTimeSlotArray = unserialize($filename); //Unserialised the code
 			if($userTimeSlotArray[$daySelected][$timeSelected] == 1){
-				$busyPeople .= $subvalue."N";
+				$busyPeopleString .= $subvalue."N";
 			} 
 		}
 	}
 
+	$busyPeopleArray = explode("N", $busyPeopleString);
+
 	//Encode for sending back to addmember.php AJAX code
-	echo json_encode(array("busyPeople" => $busyPeople));
+	echo json_encode($busyPeopleArray);
 
 ?>
