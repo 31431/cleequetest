@@ -7,14 +7,17 @@ include("main_ics_processer.php");
 if(isset($_GET['submit']) && !isset($_GET['groupID'])){
 	$_SESSION['groupID']=$_GET['groupNameSelected'];
 	$groupID = $_SESSION['groupID'];
-	if(checkingUsernameExistInGroup($groupID, $_SESSION['username'])){
-		$notGroupMember = false ;
+
+	//member Status: 0 not a member, 1 exist and not pending, 2 pending member
+	$memberStatus = checkingUsernameExistInGroup($groupID, $_SESSION['username']);
+	if($memberStatus== 0){
+		$GroupMember = false ;
 	}
 } else {
 	if(!isset($_SESSION['groupID'])&& !isset($_POST['submit'])){
 		header("Location: loginPage.php");
 	}
-}
+};
 
 
 //This is for adding member.
@@ -39,7 +42,9 @@ if (!isset($_POST['username'])) {
 	}
 }
 
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -234,18 +239,23 @@ if (!isset($_POST['username'])) {
 		<div class="mainHeadergroup">
 			<h1 id="welcomeHeader"><?php echo gettingGroupNameFromID($_SESSION['groupID']);?></h1>
 			<h6 id="welcomeHeaderFullName">Group ID : <?php echo $_SESSION['groupID'];?></h6>
-			<?php if(!$notGroupMember){  //If in the group, Quit Group appears.?> 
+			<?php if($memberStatus==1){  //If in the group, Quit Group appears.?> 
 			<form action="exitGroup.php" method='POST'>
 				<p id="addmember"  style="text-align: center;">
-				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Quit Group $notGroupMember'><br>
+				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Quit Group'><br>
 				</p>
 			</form>
-			<?php } else { //If not in the group, Join Group appears. ?>
+			<?php } elseif ($memberStatus==0) { ?>
 			<form action="joinGroup.php" method='POST'>
 				<p id="addmember"  style="text-align: center;">
-				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Join Group $notGroupMember'><br>
+				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Join Group'><br>
 				</p>
 			</form>
+			<?php } else { //If not in the group, Join Group appears. ?> 
+				<p id="addmember"  style="text-align: center;">
+				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='' name='submit' value='Pending Approaval'><br>
+				</p>
+
 			<?php } ?>
 		</div>
 		<div class="showTableDiv">
@@ -307,7 +317,7 @@ printTableArray($freeTimeArray,$numberOfPeople);
 	</div>
 
 <!-- If the user isn't a member, the seciton below wouldn't appear-->
-<?php if(!$notGroupMember){?>
+<?php if($GroupMember){?>
 <form action= '<?php $_SERVER['PHP_SELF']?>' method='POST'>
 	<p id="addmember"  style="text-align: center;">Add Group Member: </p><input class="addmember"  style="margin: auto;" type ='text' name='username' placeholder='Username or NUSNET ID'> <br>
 	<input  style="margin: auto;" class="submit" type='submit' name='submit' value='Add Member'><br>
