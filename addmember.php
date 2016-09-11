@@ -68,7 +68,7 @@ if (!isset($_POST['username'])) {
 			dataType: 'text',
 			success: function(response){
 				var obj = JSON.parse(response);
-				console.log(obj.message);
+				console.log(obj.busyPeople);
 			},
 			error: function(response, status,thrown){
 				$("#errorMessage").text("Error! Please try again later. If the problem persists, please contact us!");
