@@ -750,9 +750,21 @@ tr{
 	margin: 0;
 	font-size: 25px;
 	margin-bottom: 10px;
-
 }
-
+.newgroup{
+	background-color: white;
+	padding-left: 30px;
+	font-family: "Montserrat";
+	color: #3498db;
+	padding-top: 10px;
+	height: 400px;
+	margin-top: 25px;
+}
+.newgroup p{
+	margin: 0;
+	font-size: 25px;
+	margin-bottom: 10px;
+}
 .groupName{
 	background-color: white;
 	padding: 5px;
