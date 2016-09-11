@@ -21,6 +21,6 @@
 		}
 	}
 
-	echo jason_econde(array("busyPeople" => $busyPeople));
-
+	echo json_econde(array("busyPeople" => $busyPeople));
+	
 ?>
