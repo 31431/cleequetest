@@ -150,9 +150,11 @@ function listingAllGroups($usernameSession){
 	$sql= "SELECT groupID FROM groupmember WHERE userID= '$userID' AND pending = 0 ";
 	echo "in2";
 	$stmt = $database->prepare($sql);
-	$stmt->execute();
-	$groupArray=$stmt->fetchAll(PDO::FETCH_ASSOC);
 	echo "in3";
+	$stmt->execute();
+	echo "in4";
+	$groupArray=$stmt->fetchAll(PDO::FETCH_ASSOC);
+	echo "in5";
 	if(empty($groupArray)){
 		echo "<p> You have no groups! Please create one!</p>";
 	} else {
