@@ -782,6 +782,12 @@ tr{
 	font-family: "Montserrat";
 	color: white;
 }
+.showingPendingPeople{
+	background-color: #3498db;
+	padding: 10px 30px 20px;
+	font-family: "Montserrat";
+	color: white;
+}
 
 .groupName :hover{
 	color: navy;
