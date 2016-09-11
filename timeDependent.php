@@ -21,6 +21,10 @@
 		}
 	}
 
+	if($busyPeople == ""){
+		echo json_encode(array("busyPeople" => "none!"));
+	} else {
+	//Encode for sending back to addmember.php AJAX code
 	echo json_encode(array("busyPeople" => $busyPeople));
-	
+	};
 ?>
