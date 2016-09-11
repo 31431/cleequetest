@@ -147,13 +147,13 @@ function listingAllGroups($usernameSession){
 	echo "in1";
 	include("databaseconnection.php");
 	$userID=gettingUserID($usernameSession);
-	$sql= "SELECT groupID FROM groupmember WHERE userID= '$userID' AND pending = 0 ";
+	$sql= "SELECT groupID FROM groupmember WHERE userID= '$userID' AND pending = '0' ";
 	echo "in2";
 	$stmt = $database->prepare($sql);
 	echo "in3";
 	$stmt->execute();
 	echo "in4";
-	$groupArray=$stmt->fetchAll(PDO::FETCH_ASSOC);
+	$groupArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	echo "in5";
 	if(empty($groupArray)){
 		echo "<p> You have no groups! Please create one!</p>";
