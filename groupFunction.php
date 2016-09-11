@@ -147,8 +147,7 @@ function listingAllGroups($usernameSession){
 	echo "in1";
 	include("databaseconnection.php");
 	$userID=gettingUserID($usernameSession);
-	$zero = '0';
-	$sql= "SELECT pending FROM groupmember WHERE userID= '$userID' ";
+	$sql= "SELECT groupID FROM groupmember WHERE (userID= '$userID' AND pending = '0')";
 	echo "in2";
 	$stmt = $database->prepare($sql);
 	echo "in3";
