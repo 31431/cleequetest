@@ -11,7 +11,7 @@
 	$busyPeople = "";
 
 	//Looping through everybody in the group 
-	/*foreach ($groupMemberArray as $key => $value) {
+	foreach ($groupMemberArray as $key => $value) {
 		foreach ($value as $subkey => $subvalue) {
 			$filename=gettingFilename($subvalue); // Getting their serialised ics array
 			$userTimeSlotArray = unserialize($filename); //Unserialised the code
@@ -21,7 +21,7 @@
 		}
 	}
 
-	echo json_encode(array("busyPeople" => $busyPeople));*/
+	/*echo json_encode(array("busyPeople" => $busyPeople));*/
 	echo json_encode(array('message'=> "ok"));
 	
 ?>
