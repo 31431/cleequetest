@@ -203,7 +203,6 @@ function requestToJoinGroup($groupID,$username){
 	include('databaseconnection.php');
 	$userID = gettingUserID($username);
 	$sqlInsertingGroupMember = "INSERT INTO groupmember(groupID, userID) VALUES ('$groupID', '$userID')";
-	//echo "Username is $usernameSession <br> inside addingGroupMember<br>";
 	$database->exec($sqlInsertingGroupMember);
 }
 
@@ -211,7 +210,6 @@ function deleteMemberFromGroup($groupID,$Username){
 	include('databaseconnection.php');
 	$userID = gettingUserID($username);
 	$sql = "DELETE FROM groupmember WHERE groupID = '$groupID' AND userID = '$userID' ";
-	//echo "Username is $usernameSession <br> inside addingGroupMember<br>";
 	$database->exec($sql);
 }
 
