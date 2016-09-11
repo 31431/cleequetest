@@ -24,9 +24,9 @@
 	}
 
 	if($busyPeople == ""){
-		echo json_encode(array("busyPeople" => "none!"));
+		echo json_encode(array("busyPeople" => $_SESSION['groupID']));
 	} else {
-	//Encode for sending back to addmember.php AJAX code
-	echo json_encode(array("busyPeople" => $busyPeople));
+		//Encode for sending back to addmember.php AJAX code
+		echo json_encode(array("busyPeople" => $busyPeople));
 	};
 ?>
