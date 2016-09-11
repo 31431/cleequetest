@@ -26,7 +26,7 @@ function addingGroupMember($groupID, $usernameSession){
 	include("databaseconnection.php");
 	$userID = gettingUserID($usernameSession);
 	//echo "UserID is $userID<br>";
-	$sqlInsertingGroupMember = "INSERT INTO groupmember(groupID, userID) VALUES ('$groupID', '$userID')";
+	$sqlInsertingGroupMember = "INSERT INTO groupmember(groupID, userID, pending) VALUES ('$groupID', '$userID','0')";
 	//echo "Username is $usernameSession <br> inside addingGroupMember<br>";
 	$database->exec($sqlInsertingGroupMember);
 }
@@ -100,31 +100,36 @@ function checkingUsernameExistInUserid($usernameInput){
 function checkingUsernameExistInGroup($groupID,$usernameInput){
 	include("databaseconnection.php");
 	$userID= gettingUserID($usernameInput);
-	$sql= "SELECT count(userid) FROM groupmember WHERE userID='$userID' AND groupID='$groupID' ";
-	$stmt = $database -> prepare($sql);
+	$sql1= "SELECT count(userid) FROM groupmember WHERE userID='$userID' AND groupID='$groupID' AND pending ='1' "; // For user pending approval.
+	$sql0= "SELECT count(userid) FROM groupmember WHERE userID='$userID' AND groupID='$groupID' AND pending ='0' "; // For user alr inside.
+	//For $sql1
+	$stmt = $database -> prepare($sql1);
 	$stmt->execute();
-	$count = $stmt->fetchColumn();
-	if($count >= 1){
-		return 1;//exist;
+	$count1 = $stmt->fetchColumn();
+	//For $sql2
+	$stmt = $database -> prepare($sql0);
+	$stmt->execute();
+	$count0 = $stmt->fetchColumn();
+
+	if($count0 >= 1){
+		return 1; //exist and not pending;
+	} elseif ($count1 >= 1) {
+		return 2; //exist and pending
 	} else {
-	return 0;
+		return 0; //no
 	}
 }
 
 function gettingGroupMember($groupID){
 	include("databaseconnection.php");
-	$sql = "SELECT userID FROM groupmember WHERE groupID = '$groupID'";
+	$sql = "SELECT userID FROM groupmember WHERE groupID = '$groupID' AND pending = '0' ";
 	$stmt =  $database->prepare($sql);
 	$stmt -> execute();
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function printingGroupMember($groupID){
-	include("databaseconnection.php");
-	$sql = "SELECT userID FROM groupmember WHERE groupID = '$groupID'";
-	$stmt =  $database->prepare($sql);
-	$stmt -> execute();
-	$userArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$userArray = gettingGroupMember($groupID);
 	foreach($userArray as $key=>$value){
 		foreach($value as $subkey=>$subvalue){
 			$usernameFromID= gettingUsernameFromID($subvalue);
@@ -141,7 +146,7 @@ function printingGroupMember($groupID){
 function listingAllGroups($usernameSession){
 	include("databaseconnection.php");
 	$userID=gettingUserID($usernameSession);
-	$sql= "SELECT groupID FROM groupmember WHERE userID= '$userID'";
+	$sql= "SELECT groupID FROM groupmember WHERE userID= '$userID' AND pending ='0' ";
 	$stmt = $database->prepare($sql);
 	$stmt->execute();
 	$groupArray=$stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -185,6 +190,29 @@ function gettingGroupMemberNumber($groupID){
 	$stmt = $database->prepare($sql);
 	$stmt->execute();
 	return $stmt->fetchColumn();
+}
+
+function changePendingToZero ($groupID,$username){
+	include('databaseconnection.php');
+	$userID = gettingUserID($username);
+	$sql="UPDATE groupmember SET pending = '0' WHERE groupID = '$groupID' AND userID = '$userID' ";
+	$database->exec($sql);
+}
+
+function requestToJoinGroup($groupID,$username){
+	include('databaseconnection.php');
+	$userID = gettingUserID($username);
+	$sqlInsertingGroupMember = "INSERT INTO groupmember(groupID, userID) VALUES ('$groupID', '$userID')";
+	//echo "Username is $usernameSession <br> inside addingGroupMember<br>";
+	$database->exec($sqlInsertingGroupMember);
+}
+
+function deleteMemberFromGroup($groupID,$Username){
+	include('databaseconnection.php');
+	$userID = gettingUserID($username);
+	$sql = "DELETE FROM groupmember WHERE groupID = '$groupID' AND userID = '$userID' ";
+	//echo "Username is $usernameSession <br> inside addingGroupMember<br>";
+	$database->exec($sql);
 }
 
 
