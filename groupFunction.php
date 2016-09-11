@@ -154,15 +154,19 @@ function printingGroupMember($groupID){
 
 function printingPendingPeople($groupID){
 	$userArray = gettingPendingPeople($groupID);
-	foreach($userArray as $key=>$value){
-		foreach($value as $subkey=>$subvalue){
-			$usernameFromID= gettingUsernameFromID($subvalue);
-			$name = gettingNameFromUsername($usernameFromID);
-			echo "<div class='memberList noPointer' id='$subvalue'>";
-				echo "<p class='usernameDescription'>$usernameFromID</p>";
-				echo "<p class='nameDescription'>$name</p>";
-			echo "</div>";
+	if(count($userArray) != 0){
+		foreach($userArray as $key=>$value){
+			foreach($value as $subkey=>$subvalue){
+				$usernameFromID= gettingUsernameFromID($subvalue);
+				$name = gettingNameFromUsername($usernameFromID);
+				echo "<div class='memberList noPointer' id='$subvalue'>";
+					echo "<p class='usernameDescription'>$usernameFromID</p>";
+					echo "<p class='nameDescription'>$name</p>";
+				echo "</div>";
+			}
 		}
+	} else {
+		echo "<p>YAY! No pending request!</p>";
 	}
 
 }
