@@ -8,7 +8,7 @@ if(isset($_GET['submit']) && !isset($_GET['groupID'])){
 	$_SESSION['groupID']=$_GET['groupNameSelected'];
 	$groupID = $_SESSION['groupID'];
 	if(checkingUsernameExistInGroup($groupID, $_SESSION['username'])){
-		$notGroupMember = false ;
+		$notGroupMember = true ;
 	}
 } else {
 	if(!isset($_SESSION['groupID'])&& !isset($_POST['submit'])){
@@ -278,6 +278,9 @@ echo "</div>";
 	</div>
 	<div style="overflow-x:scroll;">
 <?php
+if($notGroupMember){
+	initialiseWeekArray($freeTimeArray); 
+}
 printTableArray($freeTimeArray,$numberOfPeople);
 ?>
 	</div>
@@ -290,7 +293,8 @@ printTableArray($freeTimeArray,$numberOfPeople);
 			</div>
 	</div>
 
-
+<!-- If the user isn't a member, the seciton below wouldn't appear-->
+<?php if(!$notGroupMember){?>
 <form action= '<?php $_SERVER['PHP_SELF']?>' method='POST'>
 	<p id="addmember"  style="text-align: center;">Add Group Member: </p><input class="addmember"  style="margin: auto;" type ='text' name='username' placeholder='Username or NUSNET ID'> <br>
 	<input  style="margin: auto;" class="submit" type='submit' name='submit' value='Add Member'><br>
@@ -301,6 +305,8 @@ printTableArray($freeTimeArray,$numberOfPeople);
 	<p id="selected"  style="text-align: center;"><br>
 	<input  style="margin: auto;" class="peopledependent" type='submit' name='submit' value='Find common free slot for selected users!'><br>
 </form>
+
+<?php } ?>;
 
 
 </body>
