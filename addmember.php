@@ -3,8 +3,13 @@ session_start();
 if(!isset($_SESSION['username'])){header('Location: index.php');}
 include("groupFunction.php");
 include("main_ics_processer.php");
+
 if(isset($_GET['submit']) && !isset($_GET['groupID'])){
 	$_SESSION['groupID']=$_GET['groupNameSelected'];
+	$groupID = $_SESSION['groupID'];
+	if(checkingUsernameExistInGroup($groupID, $_SESSION['username'])){
+		$notGroupMember = true ;
+	}
 } else {
 	if(!isset($_SESSION['groupID'])&& !isset($_POST['submit'])){
 		header("Location: loginPage.php");
@@ -33,6 +38,7 @@ if (!isset($_POST['username'])) {
 		}
 	}
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,6 +53,41 @@ if (!isset($_POST['username'])) {
 	<script type="text/javascript" src="main.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$('.busy').mouseenter(function(){
+			var dataObject = {};
+			dataObject['value']= $(this).attr('id');
+			console.log('ID: '+ dataObject['value']);
+			//AJAX REQUEST!//
+			$.ajax({
+			url: 'timeDependent.php',
+			type: 'POST',
+			data: dataObject,
+			dataType: 'text',
+			success: function(response){
+				var obj = JSON.parse(response);
+				console.log(obj.message);
+			},
+			error: function(response, status,thrown){
+				$("#errorMessage").text("Error! Please try again later. If the problem persists, please contact us!");
+				
+			}
+
+
+
+			})
+
+
+
+
+
+		});
+	});		
+
+
+
+	</script>
 </head>
 <body>
 
@@ -181,10 +222,19 @@ if (!isset($_POST['username'])) {
 		<div class="mainHeadergroup">
 			<h1 id="welcomeHeader"><?php echo gettingGroupNameFromID($_SESSION['groupID']);?></h1>
 			<h6 id="welcomeHeaderFullName">Group ID : <?php echo $_SESSION['groupID'];?></h6>
+			<?php if(!$notGroupMember){  //If in the group, Quit Group appears.?> 
 			<form action="exitGroup.php" method='POST'>
 				<p id="addmember"  style="text-align: center;">
 				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Quit Group'><br>
+				</p>
 			</form>
+			<?php } else { //If not in the group, Join Group appears. ?>
+			<form action="joinGroup.php" method='POST'>
+				<p id="addmember"  style="text-align: center;">
+				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Join Group'><br>
+				</p>
+			</form>
+			<?php } ?>
 		</div>
 		<div class="showTableDiv">
 			<p style="margin-bottom: 0;" class="groupTableHeader">The Group's Timetable</p>
