@@ -232,8 +232,8 @@ function changePendingToZero ($groupID,$username){
 function requestToJoinGroup($groupID,$username){
 	include('databaseconnection.php');
 	$userID = gettingUserID($username);
-	$sqlInsertingGroupMember = "INSERT INTO groupmember(groupID, userID) VALUES ('$groupID', '$userID')";
-	$database->exec($sqlInsertingGroupMember);
+	$sql = "INSERT INTO groupmember(groupID, userID) VALUES ('$groupID', '$userID')";
+	$database->exec($sql);
 }
 
 function deleteMemberFromGroup($groupID,$Username){
