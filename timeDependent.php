@@ -17,6 +17,8 @@
 			$userTimeSlotArray = unserialize($filename); //Unserialised the code
 			if($userTimeSlotArray[$daySelected][$timeSelected] == 1){
 				$busyPeople .= $subvalue."N";
+			} else{
+				$busyPeople .= $userTimeSlotArray[$daySelected][$timeSelected];
 			};
 		}
 	}
