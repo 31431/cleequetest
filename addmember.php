@@ -69,23 +69,24 @@ if (!isset($_POST['username'])) {
 			success: function(response){
 				var obj = JSON.parse(response);
 				console.log(obj);
-				<?php foreach ($obj as $key => $value): ?>
-					$(' "#".concat($value)').css("background-color","green");
-				<?php endforeach ?>
+				$('.memberList').css('background-color','#e3f1e2');
+				$('.memberList').css('color','#63b252');
+				obj.forEach(function(item){
+					id = "#".concat(item);
+					console.log(id);
+					$(id).css("background-color", "##f7e9e8");
+					$(id).css("color", "##f44336");
+				})
 			},
 			error: function(response, status,thrown){
 				$("#errorMessage").text("Error! Please try again later. If the problem persists, please contact us!");
 				
 			}
-
-
-
-			})
-
-
-
-
-
+			});
+		});
+		$('.busy').mouseleave(function(){
+			$('.memberList').css('background-color','inherit');
+			$('.memberList').css('color','#3498db');
 		});
 	});		
 
