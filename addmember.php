@@ -55,7 +55,8 @@ if (!isset($_POST['username'])) {
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<script type="text/javascript">
 		$(document).ready(function(){
-		$('.busy').mouseenter(function(){
+		$('.busy').mouseenter(function(event){
+			event.preventDefault();
 			var dataObject = {};
 			dataObject['value']= $(this).attr('id');
 			console.log('ID: '+ dataObject['value']);
@@ -67,7 +68,7 @@ if (!isset($_POST['username'])) {
 			dataType: 'text',
 			success: function(response){
 				var obj = JSON.parse(response);
-				console.log(obj.busyPeople);
+				console.log(obj.message);
 			},
 			error: function(response, status,thrown){
 				$("#errorMessage").text("Error! Please try again later. If the problem persists, please contact us!");

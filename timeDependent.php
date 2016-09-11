@@ -1,7 +1,7 @@
 <?php 
 	include("groupFunction.php");
 	include("main_ics_processer.php");
-	$postedInfo = $_POST['value'];
+	/*$postedInfo = $_POST['value'];
 	$value = explode(" ", $postedInfo);
 	$daySelected = $value[0];
 	$timeSelected = $value[1];
@@ -11,7 +11,7 @@
 	$busyPeople = "";
 
 	//Looping through everybody in the group 
-	/*foreach ($groupMemberArray as $key => $value) {
+	foreach ($groupMemberArray as $key => $value) {
 		foreach ($value as $subkey => $subvalue) {
 			$filename=gettingFilename($subvalue); // Getting their serialised ics array
 			$userTimeSlotArray = unserialize($filename); //Unserialised the code
@@ -22,6 +22,6 @@
 	}
 
 	echo json_enconde(array("busyPeople" => $busyPeople));*/
-	echo json_enconde(array("busyPeople" => "No One"));
+	echo json_enconde(array("message" => "Successful!"));
 	
 ?>
