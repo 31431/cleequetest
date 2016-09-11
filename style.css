@@ -738,11 +738,9 @@ tr{
 }
 .showingGroup{
 	background-color: #3498db;
-	padding-left: 30px;
+	padding: 10px 30px 20px;
 	font-family: "Montserrat";
 	color: white;
-	padding-top: 10px;
-	height: 400px;
 	margin-top: 25px;
 }
 
@@ -753,13 +751,10 @@ tr{
 }
 .newgroup{
 	background-color: white;
-	padding-left: 30px;
+	padding: 10px 30px 20px;
 	font-family: "Montserrat";
 	color: #3498db;
-	padding-top: 10px;
-	height: 400px;
-	margin-top: 25px;
-}
+}	
 .newgroup p{
 	margin: 0;
 	font-size: 25px;

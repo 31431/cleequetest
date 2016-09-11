@@ -40,8 +40,8 @@ input.newgroup[type=text], select {
 
 input.newgroupsubmit[type=submit] {
     width: 20%;
-    background-color: white;
-    color: #3498db;
+    background-color: #3498db;
+    color: white;
     padding: 6px 10px;
     margin: 8px 0;
     border: none;
@@ -122,7 +122,7 @@ input.newgroupsubmit[type=submit]:hover {
 				}
 				?>
 			</div>
-			<a id="editTimetableButton" href="showedited2.php" style="float: center;margin-top: 0px;">Edit timetable</a>
+			<a id="editTimetableButton" href="showedited2.php" style="float: center;">Edit timetable</a>
 		</div>
 		<div class="showingGroup">
 			<p>Groups</p>
@@ -155,7 +155,9 @@ input.newgroupsubmit[type=submit]:hover {
 
 	</div>
 </div>
-
+	<div class="footer">
+		<p style="text-align: left;"> &copy Cleeque 2016</p>
+	</div>
 
 </body>
 </html>
