@@ -147,6 +147,7 @@ tr{
 	display: block;
 	clear: both;
 	overflow: hidden;
+	padding-top: 40px;
 }
 
 .mainSignup{
@@ -777,11 +778,9 @@ tr{
 
 .showingMembers{
 	background-color: #3498db;
-	padding-left: 20px;
+	padding: 10px 30px 20px;
 	font-family: "Montserrat";
 	color: white;
-	padding-top: 10px;
-	height: 350px;
 }
 
 .groupName :hover{
