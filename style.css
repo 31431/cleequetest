@@ -806,7 +806,6 @@ tr{
 }
 
 .showTableDiv{
-	overflow-x: scroll;
 	padding: 10px;
 }
 

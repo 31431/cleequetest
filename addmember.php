@@ -242,6 +242,7 @@ if (!isset($_POST['username'])) {
 			<?php } ?>
 		</div>
 		<div class="showTableDiv">
+		<div>
 			<p style="margin-bottom: 0;" class="groupTableHeader">The Group's Timetable</p>
 			<p style="text-align: center; margin-top: 0; font-family: 'Montserrat'; font-size:13px; margin-bottom: 5px;"">Darker slots mean more people are not available</p>
 <?php
@@ -274,18 +275,20 @@ echo "</tr>";
 echo "</table>";
 echo "</div>";
 ?>
-
+	</div>
+	<div style="overflow-x:scroll;">
 <?php
 printTableArray($freeTimeArray,$numberOfPeople);
 ?>
-</div>
-		<div class="showingMembers" style="margin: 0;">
-			<p id="memberHeaders">Members</p>
-			<?php
-				printingGroupMember($_SESSION['groupID']);
-			?>
-		</div>
-</div>
+	</div>
+	</div>
+			<div class="showingMembers" style="margin: 0;">
+				<p id="memberHeaders">Members</p>
+				<?php
+					printingGroupMember($_SESSION['groupID']);
+				?>
+			</div>
+	</div>
 
 
 <form action= '<?php $_SERVER['PHP_SELF']?>' method='POST'>
