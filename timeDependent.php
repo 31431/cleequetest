@@ -1,7 +1,7 @@
 <?php 
-	/*include("groupFunction.php");
+	include("groupFunction.php");
 	include("main_ics_processer.php");
-	$postedInfo = $_POST['value'];
+	/*$postedInfo = $_POST['value'];
 	$value = explode(" ", $postedInfo);
 	$daySelected = $value[0];
 	$timeSelected = $value[1];
