@@ -1,7 +1,6 @@
 <?php
 	include('databaseconnection.php');
-	$userID = '232';
-	$sql= "SELECT * FROM groupmember WHERE userID= '$userID' "; 
+	$sql= "SELECT * FROM groupmember "; 
 	$stmt = $database->prepare($sql);
 	$stmt->execute();
 	$groupArray = $stmt->fetchAll(PDO::FETCH_ASSOC);

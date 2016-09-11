@@ -298,6 +298,12 @@ printTableArray($freeTimeArray,$numberOfPeople);
 					printingGroupMember($_SESSION['groupID']);
 				?>
 			</div>
+			<div class="showingPendingPeople">
+				<p>Pending Request</p> 
+				<?php
+					printingPendingPeople($_SESSION['groupID']);
+				?>
+			</div>
 	</div>
 
 <!-- If the user isn't a member, the seciton below wouldn't appear-->
