@@ -79,7 +79,7 @@ if (!isset($_POST['username'])) {
 					$(id).css("color", "##f44336"); //Red colour for busy ppl.
 				});
 				id = '#'+dataObject['value'];
-				$(id).css('background-color', '#ffc107');//The background-color of selected cell;
+				$($selectedSlot).css('background-color', '#ffc107');//The background-color of selected cell;
 
 			},
 			error: function(response, status,thrown){
