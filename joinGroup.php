@@ -5,7 +5,7 @@
 	$groupID = $_SESSION['groupID'];
 	$usernameSession = $_SESSION['username'];
 
-	requestToJoinGroup($groupID,$username);
+	requestToJoinGroup($groupID,$usernameSession);
 
-	header('Location: https://cleequetest.herokuapp.com/addmember.php');
+	header('Location: https://cleequetest.herokuapp.com/loginPage.php');
 ?>
