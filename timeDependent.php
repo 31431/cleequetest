@@ -21,7 +21,6 @@
 		}
 	}
 
-	/*echo json_encode(array("busyPeople" => $busyPeople));*/
-	echo json_encode(array('message'=> "ok"));
+	echo json_encode(array("busyPeople" => $busyPeople));
 	
 ?>
