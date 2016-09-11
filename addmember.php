@@ -69,7 +69,7 @@ if (!isset($_POST['username'])) {
 			success: function(response){
 				var obj = JSON.parse(response);
 				console.log(obj);
-				$('.memberList').css('background-color','#e3f1e2');
+				$('.memberList').css('background-color','white');
 				$('.memberList').css('color','#63b252');
 				obj.forEach(function(item){
 					id = "#".concat(item);
