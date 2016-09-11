@@ -267,7 +267,7 @@ echo "<tr>";
 echo "<td style='background-color: white; width: $cellWidth;' ></td>";
 for ($i=1; $i < $numberOfPeople ; $i++) { 
 	$opacity = (($i/$numberOfPeople)*0.8) + 0.2;
-    echo "<td class='busy' style='opacity: $opacity; width: $cellWidth; '></td>";
+    echo "<td class='busyHeader' style='opacity: $opacity; width: $cellWidth; '></td>";
 }
 echo "<td class='busy' style='width: $cellWidth;'></td>";
 echo "</tr>";

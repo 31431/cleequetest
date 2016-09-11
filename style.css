@@ -32,6 +32,11 @@ tr{
 
 .busy{
     background-color: #3c3c3c;
+    color: #01080e;   
+}
+
+.busyHeader{
+    background-color: #3c3c3c;
     color: #01080e;
     
 }
