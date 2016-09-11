@@ -11,7 +11,7 @@ if(isset($_GET['submit']) && !isset($_GET['groupID'])){
 	//member Status: 0 not a member, 1 exist and not pending, 2 pending member
 	$memberStatus = checkingUsernameExistInGroup($groupID, $_SESSION['username']);
 	if($memberStatus== 0){
-		$GroupMember = false ;
+		$groupMember = false ;
 	}
 } else {
 	if(!isset($_SESSION['groupID'])&& !isset($_POST['submit'])){
@@ -245,13 +245,13 @@ if (!isset($_POST['username'])) {
 				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Quit Group'><br>
 				</p>
 			</form>
-			<?php } elseif ($memberStatus==0) { ?>
+			<?php } elseif ($memberStatus==0) { //not in the group, Join Group appears.?>
 			<form action="joinGroup.php" method='POST'>
 				<p id="addmember"  style="text-align: center;">
 				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Join Group'><br>
 				</p>
 			</form>
-			<?php } else { //If not in the group, Join Group appears. ?> 
+			<?php } else { //Pending Approval appears. ?> 
 				<p id="addmember"  style="text-align: center;">
 				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='' name='submit' value='Pending Approaval'><br>
 				</p>
