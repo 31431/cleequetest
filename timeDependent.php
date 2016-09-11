@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	include("groupFunction.php");
 	include("main_ics_processer.php");
 	$postedInfo = $_POST['value'];
