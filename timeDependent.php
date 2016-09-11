@@ -18,16 +18,11 @@
 			$userTimeSlotArray = unserialize($filename); //Unserialised the code
 			if($userTimeSlotArray[$daySelected][$timeSelected] == 1){
 				$busyPeople .= $subvalue."N";
-			} else{
-				$busyPeople .= $userTimeSlotArray[$daySelected][$timeSelected];
-			};
+			} 
 		}
 	}
 
-	if($busyPeople == ""){
-		echo json_encode(array("busyPeople" => $_SESSION['groupID']));
-	} else {
-		//Encode for sending back to addmember.php AJAX code
-		echo json_encode(array("busyPeople" => $busyPeople));
-	};
+	//Encode for sending back to addmember.php AJAX code
+	echo json_encode(array("busyPeople" => $busyPeople));
+
 ?>
