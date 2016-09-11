@@ -55,9 +55,11 @@ if (!isset($_POST['username'])) {
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			var $selectedSlot; //The selected cell on the table
 		$('.busy').mouseenter(function(event){
 			event.preventDefault();
 			var dataObject = {};
+			$selectedSlot = this;
 			dataObject['value']= $(this).attr('id');
 			console.log('ID: '+ dataObject['value']);
 			//AJAX REQUEST!//
@@ -69,14 +71,16 @@ if (!isset($_POST['username'])) {
 			success: function(response){
 				var obj = JSON.parse(response);
 				console.log(obj);
-				$('.memberList').css('background-color','#e3f1e2');
-				$('.memberList').css('color','#63b252');
+				$('.memberList').css('background-color','#e3f1e2'); //Green colour for free ppl.
+				$('.memberList').css('color','#63b252'); //Green colour for free ppl.
 				obj.forEach(function(item){
 					id = "#".concat(item);
-					console.log(id);
-					$(id).css("background-color", "##f7e9e8");
-					$(id).css("color", "##f44336");
-				})
+					$(id).css("background-color", "##f7e9e8"); //Red colour for busy ppl.
+					$(id).css("color", "##f44336"); //Red colour for busy ppl.
+				});
+				id = '#'+dataObject['value'];
+				$(id).css('background-color', '#ffc107');//The background-color of selected cell;
+
 			},
 			error: function(response, status,thrown){
 				$("#errorMessage").text("Error! Please try again later. If the problem persists, please contact us!");
@@ -85,8 +89,9 @@ if (!isset($_POST['username'])) {
 			});
 		});
 		$('.busy').mouseleave(function(){
-			$('.memberList').css('background-color','white');
-			$('.memberList').css('color','#3498db');
+			$('.memberList').css('background-color','white'); //Revert back to original color;
+			$('.memberList').css('color','#3498db'); // Revert back to original color;
+			$($selectedSlot).css('background-color','#3c3c3c'); //Revert background color back;
 		});
 	});		
 
