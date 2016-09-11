@@ -61,7 +61,6 @@ if (!isset($_POST['username'])) {
 			var dataObject = {};
 			$selectedSlot = this;
 			dataObject['value']= $(this).attr('id');
-			console.log('ID: '+ dataObject['value']);
 			//AJAX REQUEST!//
 			$.ajax({
 			url: 'timeDependent.php',
@@ -71,6 +70,7 @@ if (!isset($_POST['username'])) {
 			success: function(response){
 				var obj = JSON.parse(response);
 				console.log(obj);
+				$('.busy').css('background-color','#3c3c3c'); //Revert background color back;
 				$('.memberList').css('background-color','#e3f1e2'); //Green colour for free ppl.
 				$('.memberList').css('color','#63b252'); //Green colour for free ppl.
 				obj.forEach(function(item){
