@@ -146,7 +146,7 @@ function printingGroupMember($groupID){
 function listingAllGroups($usernameSession){
 	include("databaseconnection.php");
 	$userID=gettingUserID($usernameSession);
-	$sql= "SELECT groupID FROM groupmember WHERE userID= '$userID' ";
+	$sql= "SELECT groupID FROM groupmember WHERE userID= '$userID' AND pending = 0 ";
 	$stmt = $database->prepare($sql);
 	$stmt->execute();
 	$groupArray=$stmt->fetchAll(PDO::FETCH_ASSOC);
