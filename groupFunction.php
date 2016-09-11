@@ -206,9 +206,9 @@ function gettingFilename($userID){
 	return $stmt->fetchColumn();
 }
 
-function gettingFilenameWithUsername($username){
+function gettingFilenameWithUsername($usernameSession){
 	include("databaseconnection.php");
-	$sql= "SELECT filename FROM userid WHERE username='$username' ";
+	$sql= "SELECT filename FROM userid WHERE username='$usernameSession' ";
 	$stmt = $database->prepare($sql);
 	$stmt->execute();
 	return $stmt->fetchColumn();
@@ -222,23 +222,23 @@ function gettingGroupMemberNumber($groupID){
 	return $stmt->fetchColumn();
 }
 
-function changePendingToZero ($groupID,$username){
+function changePendingToZero ($groupID,$usernameSession){
 	include('databaseconnection.php');
-	$userID = gettingUserID($username);
+	$userID = gettingUserID($usernameSession);
 	$sql="UPDATE groupmember SET pending = '0' WHERE groupID = '$groupID' AND userID = '$userID' ";
 	$database->exec($sql);
 }
 
-function requestToJoinGroup($groupID,$username){
+function requestToJoinGroup($groupID,$usernameSession){
 	include('databaseconnection.php');
-	$userID = gettingUserID($username);
+	$userID = gettingUserID($usernameSession);
 	$sql = "INSERT INTO groupmember(groupID, userID) VALUES ('$groupID', '$userID')";
 	$database->exec($sql);
 }
 
-function deleteMemberFromGroup($groupID,$Username){
+function deleteMemberFromGroup($groupID,$usernameSession){
 	include('databaseconnection.php');
-	$userID = gettingUserID($username);
+	$userID = gettingUserID($usernameSession);
 	$sql = "DELETE FROM groupmember WHERE groupID = '$groupID' AND userID = '$userID' ";
 	$database->exec($sql);
 }
