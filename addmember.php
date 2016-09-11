@@ -70,8 +70,7 @@ if (!isset($_POST['username'])) {
 				var obj = JSON.parse(response);
 				console.log(obj);
 				<?php foreach ($obj as $key => $value): ?>
-					id = "#".concat($value);
-					$('#'.concat($value)).css("background-color","green");
+					$(' "#".concat($value)').css("background-color","green");
 				<?php endforeach ?>
 			},
 			error: function(response, status,thrown){
