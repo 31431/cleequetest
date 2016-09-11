@@ -8,7 +8,7 @@ if(isset($_GET['submit']) && !isset($_GET['groupID'])){
 	$_SESSION['groupID']=$_GET['groupNameSelected'];
 	$groupID = $_SESSION['groupID'];
 	if(checkingUsernameExistInGroup($groupID, $_SESSION['username'])){
-		$notGroupMember = true ;
+		$notGroupMember = false ;
 	}
 } else {
 	if(!isset($_SESSION['groupID'])&& !isset($_POST['submit'])){
