@@ -56,13 +56,14 @@ if (!isset($_POST['username'])) {
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var $selectedSlot; //The selected cell on the table
+			var $xhr;
 		$('.busy').mouseenter(function(event){
 			event.preventDefault();
 			var dataObject = {};
 			$selectedSlot = this;
 			dataObject['value']= $(this).attr('id');
 			//AJAX REQUEST!//
-			$.ajax({
+			$xhr = $.ajax({
 			url: 'timeDependent.php',
 			type: 'POST',
 			data: dataObject,
@@ -89,6 +90,7 @@ if (!isset($_POST['username'])) {
 			});
 		});
 		$('.busy').mouseleave(function(){
+			$xhr.abort();
 			$('.memberList').css('background-color','white'); //Revert back to original color;
 			$('.memberList').css('color','#3498db'); // Revert back to original color;
 			$($selectedSlot).css('background-color','#3c3c3c'); //Revert background color back;
