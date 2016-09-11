@@ -237,7 +237,7 @@ if (!isset($_POST['username'])) {
 			<?php if(!$notGroupMember){  //If in the group, Quit Group appears.?> 
 			<form action="exitGroup.php" method='POST'>
 				<p id="addmember"  style="text-align: center;">
-				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Quit Group'><br>
+				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='submit' name='submit' value='Quit Group $notGroupMember'><br>
 				</p>
 			</form>
 			<?php } else { //If not in the group, Join Group appears. ?>
