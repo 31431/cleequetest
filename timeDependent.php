@@ -23,6 +23,7 @@
 	}
 
 	$busyPeopleArray = explode("N", $busyPeopleString);
+	unset($busyPeopleArray[count($busyPeopleArray) - 1]);
 
 	//Encode for sending back to addmember.php AJAX code
 	echo json_encode($busyPeopleArray);
