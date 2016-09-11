@@ -12,6 +12,8 @@ if(isset($_GET['submit']) && !isset($_GET['groupID'])){
 	$memberStatus = checkingUsernameExistInGroup($groupID, $_SESSION['username']);
 	if($memberStatus== 0){
 		$groupMember = false ;
+	} else {
+		$groupMember = true;
 	}
 } else {
 	if(!isset($_SESSION['groupID'])&& !isset($_POST['submit'])){
@@ -261,7 +263,7 @@ if (!isset($_POST['username'])) {
 		<div class="showTableDiv">
 		<div>
 			<p style="margin-bottom: 0;" class="groupTableHeader">The Group's Timetable</p>
-			<p style="text-align: center; margin-top: 0; font-family: 'Montserrat'; font-size:13px; margin-bottom: 5px;">Darker slots mean more people are not available</p>
+			<!--<p style="text-align: center; margin-top: 0; font-family: 'Montserrat'; font-size:13px; margin-bottom: 5px;">Darker slots mean more people are not available</p>-->
 <?php
 //Initialise the free time array
 $groupMemberArray=gettingGroupMember($_SESSION['groupID']);
@@ -280,6 +282,7 @@ $numberOfPeople = count($groupMemberArray);
 $width= 300/($numberOfPeople+1);
 $cellWidth = $width.'px';
 echo "<div class='opacityTableDiv'>";
+echo "0/".$numberOfPeople." Free";
 echo "<table class='opacityTable'>";
 echo "<tr>";
 echo "<td style='background-color: white; width: $cellWidth;' ></td>";
@@ -290,12 +293,13 @@ for ($i=1; $i < $numberOfPeople ; $i++) {
 echo "<td class='busyHeader' style='width: $cellWidth;'></td>";
 echo "</tr>";
 echo "</table>";
+echo $numberOfPeople."/".$numberOfPeople." Free";
 echo "</div>";
 ?>
 	</div>
 	<div style="overflow-x:scroll;">
 <?php
-if($groupMember){
+if(!$groupMember){
 	initialiseWeekArray($freeTimeArray); 
 }
 printTableArray($freeTimeArray,$numberOfPeople);
@@ -329,7 +333,7 @@ printTableArray($freeTimeArray,$numberOfPeople);
 	<input  style="margin: auto;" class="peopledependent" type='submit' name='submit' value='Find common free slot for selected users!'><br>
 </form>
 
-<?php } ?>;
+<?php } ?>
 
 
 </body>
