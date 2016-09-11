@@ -1,7 +1,7 @@
 <?php 
-	include("groupFunction.php");
+	/*include("groupFunction.php");
 	include("main_ics_processer.php");
-	/*$postedInfo = $_POST['value'];
+	$postedInfo = $_POST['value'];
 	$value = explode(" ", $postedInfo);
 	$daySelected = $value[0];
 	$timeSelected = $value[1];
@@ -21,7 +21,7 @@
 		}
 	}
 
-	echo json_enconde(array("busyPeople" => $busyPeople));*/
-	echo json_enconde(array("message" => "Successful!"));
+	echo json_encode(array("busyPeople" => $busyPeople));*/
+	echo json_encode(array('message'=> "ok"));
 	
 ?>
