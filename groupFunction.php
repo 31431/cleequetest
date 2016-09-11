@@ -155,16 +155,18 @@ function printingGroupMember($groupID){
 function printingPendingPeople($groupID){
 	$userArray = gettingPendingPeople($groupID);
 	if(count($userArray) != 0){
+		echo "<form action='approvingMember.php' method='post' name='userChosen'>";
 		foreach($userArray as $key=>$value){
-			foreach($value as $subkey=>$subvalue){
-				$usernameFromID= gettingUsernameFromID($subvalue);
-				$name = gettingNameFromUsername($usernameFromID);
-				echo "<div class='memberList noPointer' id='$subvalue'>";
-					echo "<p class='usernameDescription'>$usernameFromID</p>";
-					echo "<p class='nameDescription'>$name</p>";
-				echo "</div>";
+			foreach ($value as $subkey => $userID) {
+				$name= gettingUsernameFromID($userID);
+				$fullname = gettingNameFromUsername($name);
+				echo "<input type='checkbox' class='member' name='userChosen[$name]' value='$userID' id='$name' style='display:none'></input>";
+				echo "<label for='$name' class='groupPeopleDep'><p style='margin:0;'>$name</p><p class='nameDescription' style='color:#999999'>$fullname</p></label>";
 			}
 		}
+		//echo "<br><br><input type='submit' value='Submit'>";
+		echo "<br><br><input class='submit' type='submit'>";
+		echo "</form>";
 	} else {
 		echo "<p>YAY! No pending request!</p>";
 	}
