@@ -165,7 +165,7 @@ function printingPendingPeople($groupID){
 			}
 		}
 		//echo "<br><br><input type='submit' value='Submit'>";
-		echo "<br><br><input class='submit' type='submit'>";
+		echo "<br><br><input class='submit pendingPeople' type='submit' value='Approve'>";
 		echo "</form>";
 	} else {
 		echo "<p>YAY! No pending request!</p>";

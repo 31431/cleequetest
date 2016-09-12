@@ -227,8 +227,8 @@ if (!isset($_POST['username'])) {
 	/*This section is taken from peopledependent.php to style member approval form.*/
 	input.submit[type=submit] {
 	    width: 10%;
-	    background-color: #3498db;
-	    color: white;
+	    background-color: white;
+	    color: #3498db;
 	    padding: 6px 10px;
 	    margin: 8px 20px;
 	    border: none;
@@ -331,7 +331,7 @@ if (!isset($_POST['username'])) {
 			</form>
 			<?php } else { //Pending Approval appears. ?> 
 				<p id="addmember"  style="text-align: center;">
-				<input  style="margin-left: auto; margin-right: auto; min-width: 120px; cursor:default;" class="quitgroup" type='submit' name='submit' value='Pending Approval'><br>
+				<input  style="margin-left: auto; margin-right: auto; min-width: 140px; cursor:default;" class="quitgroup" type='submit' name='submit' value='Pending Approval'><br>
 				</p>
 
 			<?php } ?>
@@ -390,7 +390,7 @@ printTableArray($freeTimeArray,$numberOfPeople);
 			</div>
 			<?php if($groupMember){?>
 			<div class="showingPendingPeople">
-				<p>Pending Request</p> 
+				<p style='font-size: 20px; margin-top: 0px;'>Pending Request</p> 
 				<?php 
 					printingPendingPeople($_SESSION['groupID']);
 				?>
