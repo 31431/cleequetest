@@ -1,7 +1,9 @@
 <?php
 session_start();
-if(isset($_GET['groupNameSelected'])){$_SESSION['groupID']=$_GET['groupNameSelected']};
-if(!isset($_SESSION['username'])){header('Location: index.php');}
+if(isset($_GET['groupNameSelected'])){
+	$_SESSION['groupID']=$_GET['groupNameSelected'];
+};
+if(!isset($_SESSION['username'])){header('Location: index.php');};
 include("groupFunction.php");
 include("main_ics_processer.php");
 
