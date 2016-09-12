@@ -225,7 +225,7 @@ if (!isset($_POST['username'])) {
 	}
 
 	/*This section is taken from peopledependent.php to style member approval form.*/
-	input.submit[type=submit] {
+	#pendingPeopleSubmitButton{
 	    width: 10%;
 	    background-color: white;
 	    color: #3498db;
@@ -331,7 +331,7 @@ if (!isset($_POST['username'])) {
 			</form>
 			<?php } else { //Pending Approval appears. ?> 
 				<p id="addmember"  style="text-align: center;">
-				<input  style="margin-left: auto; margin-right: auto; min-width: 140px; cursor:default;" class="quitgroup" type='submit' name='submit' value='Pending Approval'><br>
+				<input  style="margin-left: auto; margin-right: auto; min-width: 160px; cursor:default;" class="quitgroup" type='submit' name='submit' value='Pending Approval'><br>
 				</p>
 
 			<?php } ?>
