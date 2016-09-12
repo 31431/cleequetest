@@ -224,6 +224,11 @@ if (!isset($_POST['username'])) {
 		margin-bottom: 10px;
 	}
 
+	.opacityDescription{
+		display: inline-block;
+		font-family: "Montserrat";
+	}
+
 	/*This section is taken from peopledependent.php to style member approval form.*/
 	#pendingPeopleSubmitButton{
 	    width: 10%;
@@ -357,8 +362,8 @@ foreach ($groupMemberArray as $key => $value) {
 $numberOfPeople = count($groupMemberArray);
 $width= 300/($numberOfPeople+1);
 $cellWidth = $width.'px';
-echo "<div class='opacityTableDiv'>";
-echo "<p>0/".$numberOfPeople." Free</p>";
+echo "<div class='opacityTableDiv' style='height: 30px;'>";
+echo "<p class='opacityDescription' style='margin-right: 8px;'>0/".$numberOfPeople." Free</p>";
 echo "<table class='opacityTable'>";
 echo "<tr>";
 echo "<td style='background-color: white; width: $cellWidth;' ></td>";
@@ -369,10 +374,10 @@ for ($i=1; $i < $numberOfPeople ; $i++) {
 echo "<td class='busyHeader' style='width: $cellWidth;'></td>";
 echo "</tr>";
 echo "</table>";
-echo "<p>".$numberOfPeople."/".$numberOfPeople." Free</p>";
+echo "<p class='opacityDescription' style='margin-left: 8px;'>".$numberOfPeople."/".$numberOfPeople." Free</p>";
 echo "</div>";
 ?>
-		<p>Hover your cusor on a busy slot and wait a moment to see who are busy for that time!</p>
+		<p style="margin-top:0; text-align: center; font-size: 12px; font-family: 'Montserrat';">Hover your cusor on a busy slot and wait a moment to see who are busy for that time!</p>
 	</div>
 	<div style="overflow-x:scroll;">
 <?php
