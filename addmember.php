@@ -358,7 +358,7 @@ $numberOfPeople = count($groupMemberArray);
 $width= 300/($numberOfPeople+1);
 $cellWidth = $width.'px';
 echo "<div class='opacityTableDiv'>";
-echo "0/".$numberOfPeople." Free";
+echo "<p>0/".$numberOfPeople." Free</p>";
 echo "<table class='opacityTable'>";
 echo "<tr>";
 echo "<td style='background-color: white; width: $cellWidth;' ></td>";
@@ -369,9 +369,10 @@ for ($i=1; $i < $numberOfPeople ; $i++) {
 echo "<td class='busyHeader' style='width: $cellWidth;'></td>";
 echo "</tr>";
 echo "</table>";
-echo $numberOfPeople."/".$numberOfPeople." Free";
+echo "<p>".$numberOfPeople."/".$numberOfPeople." Free</p>";
 echo "</div>";
 ?>
+		<p>Hover your cusor on a busy slot and wait a moment to see who are busy for that time!</p>
 	</div>
 	<div style="overflow-x:scroll;">
 <?php
