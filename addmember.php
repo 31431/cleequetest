@@ -10,8 +10,8 @@ if(isset($_GET['submit']) && !isset($_GET['groupID'])){
 
 	//member Status: 0 not a member, 1 exist and not pending, 2 pending member
 	$memberStatus = checkingUsernameExistInGroup($groupID, $_SESSION['username']);
-	if($memberStatus== 0){
-		$groupMember = false ;
+	if($memberStatus== 0 || $memberStatus == 2){
+		$groupMember = false ; // For pending member and those haven't joined the group.
 	} else {
 		$groupMember = true;
 	}
@@ -255,7 +255,7 @@ if (!isset($_POST['username'])) {
 			</form>
 			<?php } else { //Pending Approval appears. ?> 
 				<p id="addmember"  style="text-align: center;">
-				<input  style="margin-left: auto; margin-right: auto; min-width: 120px;" class="quitgroup" type='' name='submit' value='Pending Approaval'><br>
+				<input  style="margin-left: auto; margin-right: auto; min-width: 120px; cursor:default;" class="quitgroup" type='submit' name='submit' value='Pending Approaval'><br>
 				</p>
 
 			<?php } ?>
@@ -312,12 +312,14 @@ printTableArray($freeTimeArray,$numberOfPeople);
 					printingGroupMember($_SESSION['groupID']);
 				?>
 			</div>
+			<?php if($groupMember){?>
 			<div class="showingPendingPeople">
 				<p>Pending Request</p> 
-				<?php
+				<?php 
 					printingPendingPeople($_SESSION['groupID']);
 				?>
 			</div>
+			<? } //closing the bracket?> 
 	</div>
 
 <!-- If the user isn't a member, the seciton below wouldn't appear-->
