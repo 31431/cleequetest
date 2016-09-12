@@ -255,7 +255,7 @@ if (!isset($_POST['username'])) {
 			</form>
 			<?php } else { //Pending Approval appears. ?> 
 				<p id="addmember"  style="text-align: center;">
-				<input  style="margin-left: auto; margin-right: auto; min-width: 120px; cursor:default;" class="quitgroup" type='submit' name='submit' value='Pending Approaval'><br>
+				<input  style="margin-left: auto; margin-right: auto; min-width: 120px; cursor:default;" class="quitgroup" type='submit' name='submit' value='Pending Approval'><br>
 				</p>
 
 			<?php } ?>
