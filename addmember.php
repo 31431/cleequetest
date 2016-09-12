@@ -223,6 +223,82 @@ if (!isset($_POST['username'])) {
 		font-size: 20px;
 		margin-bottom: 10px;
 	}
+
+	/*This section is taken from peopledependent.php to style member approval form.*/
+	input.submit[type=submit] {
+	    width: 10%;
+	    background-color: #3498db;
+	    color: white;
+	    padding: 6px 10px;
+	    margin: 8px 20px;
+	    border: none;
+	    border-radius: 4px;
+	    cursor: pointer;
+	    font-family: "Roboto";
+	    font-size: 15px;
+	}
+
+	input.submit[type=submit]:hover {
+	    background-color: #2b3856;
+	    transition: 0.2s;
+	    color: white;
+	}
+	input.member[type=checkbox] select{
+		font-family: "Roboto";
+
+	}
+	input.return[type=submit] {
+	    width: 10%;
+	    background-color: white;
+	    color: red;
+	    padding: 6px 10px;
+	    border: 1px solid red;
+	    margin: 8px 20px;
+	    border-radius: 4px;
+	    cursor: pointer;
+	    font-family: "Roboto";
+	    font-size: 15px;
+	}
+
+	input.return[type=submit]:hover {
+	    background-color: red;
+	    transition: 0.2s;
+	    color: white;
+	    margin-left: 20px;
+	}
+
+	.groupPeopleDep{
+		font-size: 20px;
+		margin: 0px;
+		margin-bottom: 10px;
+		background-color: white;
+		padding: 5px;
+		color: #3498db;
+		display: inline-block;
+		width: 31%;
+		max-width: 250px;
+		text-align: center;
+		border-radius: 7px;
+		border: 1px solid;
+		cursor: pointer;
+		transition: 0.2s;
+		overflow: hidden;
+		font-family: "Montserrat";
+
+	}
+
+	.groupPeopleDep:hover{
+		background-color: #8ac3f1;
+	}
+
+	.selected{
+		background-color: #2b3856;
+		color: white;
+	}
+
+	.selectedForName{
+		color: #3498db ;
+	}
 </style>
 
 <div class="navbar">
