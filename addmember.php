@@ -413,8 +413,9 @@ printTableArray($freeTimeArray,$numberOfPeople);
 
 
 <form action="peopledependent.php" method='GET'>
-	<input class= "return" type="hidden" name="groupID" value="<?php echo $groupID; ?>"/>
-        <button class= "return" type="submit">Find common free slot for selected users!</button>
+	<p id="selected"  style="text-align: center;"><br>
+	<input type="hidden" name="groupID" value="<?php echo $groupID; ?>"/>
+    <button style="margin: auto;" class= "peopledependent" type="submit">Find common free slot for selected users!</button>
 </form>
 
 <?php } ?>
