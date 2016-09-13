@@ -3,10 +3,11 @@
 	include("groupFunction.php");
 	include("main_ics_processer.php");
 	include("databaseconnection.php");
-	if(!isset($_SESSION['username'])){header('Location: index.php');}
+	if(!isset($_SESSION['username']) || !isset($_POST['groupID'])){header('Location: index.php');}
 	$username=$_SESSION['username'];
 	$_SESSION['fullName']=gettingNameFromUsername($_SESSION['username']);
-	$groupID=$_SESSION['groupID'];
+	$groupID=$_POST['groupID'];
+
 	
 ?>
 <!DOCTYPE html>
@@ -170,7 +171,8 @@ input.return[type=submit]:hover {
 	$_SESSION['groupID']=$groupID;
 	?>
 <form action="addmember.php" method="POST">
-        <input class= "return" type="submit" name="submit" value="Cancel">
+        <input class= "return" type="hidden" name="groupID" value="<?php echo $groupID; ?>"/>
+        <button class= "return" type="submit">Cancel</button>
     </form>
 	<?php 
 
