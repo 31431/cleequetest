@@ -3,14 +3,10 @@
 	include("groupFunction.php");
 	include("main_ics_processer.php");
 	include("databaseconnection.php");
-	if(!isset($_SESSION['username']) || !isset($_POST['groupID'])){header('Location: index.php');}
-	$usernameSession = $_SESSION['username'];
-	$groupID = $_POST['groupID'];
-	//If the user doesn't exist or is pending approval, redirect to addmember.php
-	if(checkingUsernameExistInGroup($groupID,$usernameSession != 1)){header('Location: https://cleequetest.herokuapp.com/addmember.php?groupNameSelected='.$groupID.'&submit=Go%21');
-	};
+	if(!isset($_SESSION['username'])){header('Location: index.php');}
 	$username=$_SESSION['username'];
 	$_SESSION['fullName']=gettingNameFromUsername($_SESSION['username']);
+	$groupID=$_SESSION['groupID'];
 	
 ?>
 <!DOCTYPE html>
@@ -173,11 +169,9 @@ input.return[type=submit]:hover {
 	echo "</form>";
 	$_SESSION['groupID']=$groupID;
 	?>
-
-    <form action="addmember.php" method='GET'>
-		<input type="hidden" name="groupID" value="<?php echo $groupID; ?>">
-		<button  style="margin: auto;" class="return" type='submit'>Cancel</button><br>
-	</form>
+<form action="addmember.php" method="POST">
+        <input class= "return" type="submit" name="submit" value="Cancel">
+    </form>
 	<?php 
 
 	if(isset($_POST['userChosen'])){

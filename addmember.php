@@ -1,16 +1,13 @@
 <?php
 session_start();
-unset(isset($_SESSION['groupID']));
+if(!isset($_SESSION['username'])){header('Location: index.php');}
 include("groupFunction.php");
 include("main_ics_processer.php");
-if(isset($_GET['groupNameSelected'])){
-	$_SESSION['groupID']=$_GET['groupNameSelected'];
-};
-if(!isset($_SESSION['username'])){header('Location: index.php');};
-if(isset($_GET['submit']) && !isset($_GET['groupID'])){
 
+if(isset($_GET['submit']) && !isset($_GET['groupID'])){
 	$_SESSION['groupID']=$_GET['groupNameSelected'];
 	$groupID = $_SESSION['groupID'];
+
 	//member Status: 0 not a member, 1 exist and not pending, 2 pending member
 	$memberStatus = checkingUsernameExistInGroup($groupID, $_SESSION['username']);
 	if($memberStatus== 0 || $memberStatus == 2){
@@ -415,10 +412,9 @@ printTableArray($freeTimeArray,$numberOfPeople);
 </form>
 
 
-<form action="peopledependent.php" method='GET'>
+<form action="peopledependent.php" method='POST'>
 	<p id="selected"  style="text-align: center;"><br>
-	<input type="hidden" name="groupID" value="<?php echo $groupID; ?>">
-	<button  style="margin: auto;" class="peopledependent" type='submit'>Find common free slot for selected users!</button><br>
+	<input  style="margin: auto;" class="peopledependent" type='submit' name='submit' value='Find common free slot for selected users!'><br>
 </form>
 
 <?php } ?>

@@ -4,11 +4,6 @@
 	include("main_ics_processer.php");
 	include("databaseconnection.php");
 	if(!isset($_SESSION['username'])){header('Location: index.php');}
-	//If groupID has been set (people accessing this website from URL of the group but they weren't logged in), they will be redirect to the group page.
-	if(isset($_SESSION['groupID'])){
-		$groupID = $_SESSION['groupID'];
-		header('Location: https://cleequetest.herokuapp.com/addmember.php?groupNameSelected='.$groupID.'&submit=Go%21');
-	}
 	$username=$_SESSION['username'];
 	$_SESSION['fullName']=gettingNameFromUsername($_SESSION['username']);
 	
