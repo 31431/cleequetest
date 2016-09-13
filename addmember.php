@@ -1,16 +1,16 @@
 <?php
 session_start();
+unset(isset($_SESSION['groupID']));
+include("groupFunction.php");
+include("main_ics_processer.php");
 if(isset($_GET['groupNameSelected'])){
 	$_SESSION['groupID']=$_GET['groupNameSelected'];
 };
 if(!isset($_SESSION['username'])){header('Location: index.php');};
-include("groupFunction.php");
-include("main_ics_processer.php");
-
 if(isset($_GET['submit']) && !isset($_GET['groupID'])){
+
 	$_SESSION['groupID']=$_GET['groupNameSelected'];
 	$groupID = $_SESSION['groupID'];
-
 	//member Status: 0 not a member, 1 exist and not pending, 2 pending member
 	$memberStatus = checkingUsernameExistInGroup($groupID, $_SESSION['username']);
 	if($memberStatus== 0 || $memberStatus == 2){
