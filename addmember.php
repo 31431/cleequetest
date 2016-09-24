@@ -141,7 +141,7 @@ if (!isset($_POST['username'])) {
     transition: 0.2s;
 	}
 
-	button.peopledependent[type=submit],select {
+	input.peopledependent[type=submit],select {
     width: 40%;
     background-color: white;
     color: #3498db;
@@ -414,8 +414,7 @@ printTableArray($freeTimeArray,$numberOfPeople);
 
 <form action="peopledependent.php" method='POST'>
 	<p id="selected"  style="text-align: center;"><br>
-	<input type="hidden" name="groupID" value="<?php echo $groupID; ?>"/>
-    <button style="margin: auto;" class= "peopledependent" type="submit">Find common free slot for selected users!</button>
+	<input  style="margin: auto;" class="peopledependent" type='submit' name='submit' value='Find common free slot for selected users!'><br>
 </form>
 
 <?php } ?>

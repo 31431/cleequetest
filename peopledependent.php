@@ -3,11 +3,10 @@
 	include("groupFunction.php");
 	include("main_ics_processer.php");
 	include("databaseconnection.php");
-	if(!isset($_SESSION['username']) || !isset($_POST['groupID'])){header('Location: index.php');}
+	if(!isset($_SESSION['username'])){header('Location: index.php');}
 	$username=$_SESSION['username'];
 	$_SESSION['fullName']=gettingNameFromUsername($_SESSION['username']);
-	$groupID=$_POST['groupID'];
-
+	$groupID=$_SESSION['groupID'];
 	
 ?>
 <!DOCTYPE html>
@@ -171,8 +170,9 @@ input.return[type=submit]:hover {
 	$_SESSION['groupID']=$groupID;
 	?>
 <form action="addmember.php" method="POST">
-        <input class= "return" type="hidden" name="groupID" value="<?php echo $groupID; ?>"/>
-        <button class= "return" type="submit">Cancel</button>
+		<input type="hidden" name="groupNameSelected" value="<?php echo $groupID; ?>">
+		<input type="hidden" name="submit" value='Go'>
+        <input class= "return" type="submit" value="Cancel">
     </form>
 	<?php 
 
@@ -192,7 +192,7 @@ input.return[type=submit]:hover {
 		exit();
 	}
 	echo "<p id='selectmember'> Common Free Time For Selected Users</p>";
-	echo '<div class="showTableDiv">';
+	echo '<div class="showTableDiv" style="overflow-x: scroll;">';
 	$numberOfPeopleSubmitted = count($_POST['userChosen']);
 	printTableArray($freeTimeArray, $numberOfPeopleSubmitted);
 	echo '</div>';
