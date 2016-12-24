@@ -51,7 +51,7 @@ $(document).ready(function(){
 	$('#slideBack').click(function(){
 		currentSlide--;
 		if(currentSlide==0){
-			$slideContainer.css('margin-left','-200%');
+			$slideContainer.css('margin-left','-300%');
 			currentSlide=3;
 		}
 		$slideContainer.animate({'margin-left':'+='+width+'%'},animationSpeed);
