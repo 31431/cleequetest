@@ -52,7 +52,7 @@ $(document).ready(function(){
 		currentSlide--;
 		if(currentSlide==0){
 			$slideContainer.css('margin-left','-200%');
-			currentSlide=2;
+			currentSlide=3;
 		}
 		$slideContainer.animate({'margin-left':'+='+width+'%'},animationSpeed);
 		$dotContainer.removeClass("active");

@@ -135,6 +135,7 @@ try {
 				<ul>
 					<li id="dot1" class="active"></li>
 					<li id="dot2"></li>
+					<li id="dot3"></li>
 				</ul>
 			</div>
 			<div class="slide" id="first">	
@@ -142,13 +143,15 @@ try {
 				<p id="tagline">Arranging a meeting has never been this easy</p>
 			</div>
 			<div class="slide" id="second">
+				<p style="font-color: white" id='min'><span style="font-size: 80px">UPDATE</span><br>New stuff coming up soon!</p>
+			</div> 
+			<div class="slide" id="second">
 				<p style="font-color: white" id='min'>Find your group's common timeslot<br>in less than 3 minutes!</p>
 			</div> 
 			<div class="slide" id="first">	
 				<p><span style="font-size: 150px" >CLEEQUE</span></p>
 				<p span id="tagline">Arranging a meeting has never been this easy</p>
 			</div>
-
 		</div>
 	</div>
 	<div class="footer">
