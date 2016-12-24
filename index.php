@@ -143,9 +143,9 @@ try {
 				<p id="tagline">Arranging a meeting has never been this easy</p>
 			</div>
 			<div class="slide" id="second">
-				<p style="font-color: white" id='min'><span style="font-size: 80px">UPDATE</span><br>New stuff coming up soon!</p>
+				<p style="font-color: white" id='min'><span style="font-size: 150px">UPDATE</span><br>New stuff coming up soon!</p>
 			</div> 
-			<div class="slide" id="second">
+			<div class="slide" id="third">
 				<p style="font-color: white" id='min'>Find your group's common timeslot<br>in less than 3 minutes!</p>
 			</div> 
 			<div class="slide" id="first">	

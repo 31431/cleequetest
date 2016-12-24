@@ -182,7 +182,7 @@ tr{
     background-attachment: fixed;
     background-size: cover;
 }
-#second{	
+#third,#second{	
 	background-image: url("http://i.imgur.com/H4esOFn.jpg");
     background-repeat: no-repeat;
     background-position: center;
